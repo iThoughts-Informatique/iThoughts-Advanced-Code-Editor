@@ -9,9 +9,6 @@
 				<div id="dashboard-widgets">
 					<div id="normal-sortables" class=""><!--Old removed classes: "meta-box-sortables ui-sortable"-->
 						<form action="<?php echo $ajax; ?>" method="post" class="simpleajaxform" data-target="update-response">
-
-							<p><strong><?php _e("Note", 'ithoughts-advanced-code-editor' ); ?>:</strong>&nbsp;<?php _e("Labels in <span class=\"nonoverridable\">red</span> indicate global options, not overridable by tips.", 'ithoughts-advanced-code-editor' ); ?></p>
-
 							<div class="postbox">
 								<div class="handlediv" title="Cliquer pour inverser."><br></div><h3 class="hndle"><span><?php _e('Options', 'ithoughts-advanced-code-editor' ); ?></span></h3>
 								<div class="inside">
@@ -49,7 +46,7 @@ div{
 											</tr>
 											<tr>
 												<th rowspan="2">
-													<label for="autocompletion"><?php _e('autocompletion', 'ithoughts-advanced-code-editor' ); ?>:</label>
+													<label for="autocompletion"><?php _e('Autocompletion', 'ithoughts-advanced-code-editor' ); ?>:</label>
 												</th>
 												<td>
 													<?php echo $optionsInputs["autocompletion"]["autocompletion_ondemand"]; ?><label for="autocompletion_ondemand"><?php _e('Autocomplete on demande <em>(Press ctrl+space)</em>', 'ithoughts-advanced-code-editor' ); ?></label>

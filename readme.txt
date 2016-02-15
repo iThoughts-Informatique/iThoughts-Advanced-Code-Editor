@@ -42,6 +42,10 @@ This section is empty for now.
 
 == Screenshots ==
 
+1. Option page of iThoughts Advanced Code Editor with a test ACE editor
+2. Edition of a plugin file
+3. Information tooltip and completion suggestions in a theme CSS file 
+
 == Changelog ==
 
 
