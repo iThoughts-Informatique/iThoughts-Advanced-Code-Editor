@@ -71,9 +71,7 @@ $d.ready(function(){
 			
 			
 			var availableHeight = windowPos.bottom - Math.max(baseOffsetContainer, windowPos.top);
-			console.log($w.height(), availableHeight);
 			var submitHeight = $container.height() - $editorContainer.height();
-			console.log(submitHeight);
 			var height = (availableHeight - submitHeight) - (parseFloat($('#template p.submit').css("margin-bottom")) || 0);
 			$editorContainer.height(height);
 			editor.resize();
