@@ -1,8 +1,8 @@
 <?php
 /*
 Plugin Name: iThoughts Advanced Code Editor
-Plugin URI: 
-Description: 
+Plugin URI: http://www.gerkindevelopment.net/en/portfolio/ithoughts-advanced-code-editor/
+Description: Integrate the Code Editor Ace into your WordPress editors to help you write efficient code!
 Version:     1.0.0
 Author:      Gerkin
 License:     GPLv2 or later

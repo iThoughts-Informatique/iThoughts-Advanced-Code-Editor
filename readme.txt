@@ -48,6 +48,12 @@ This section is empty for now.
 
 == Changelog ==
 
+= 1.0.0 =
+* NEW Initial release
+
 
 == Upgrade Notice ==
+
+= 1.0.0 =
+Initial release
 
