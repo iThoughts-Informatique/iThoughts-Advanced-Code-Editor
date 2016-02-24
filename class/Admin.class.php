@@ -10,15 +10,13 @@ namespace ithoughts\ace;
 class Admin extends \ithoughts\v1_0\Singleton{
 
 	public function __construct() {
-		add_action( 'admin_init',							array(&$this,	"register_scripts"));
+		add_action( 'admin_enqueue_scripts',				array(&$this,	"register_scripts"), 0,999999);
 		add_action( 'admin_menu',							array(&$this,	"menu_page"));
 		add_action( 'wp_ajax_ithoughts_ace_update_options',	array(&$this,	'update_options') );
 	}
 
 	public function register_scripts(){
 		$backbone = \ithoughts\ace\Backbone::get_instance();
-		$options = $backbone->get_options();
-		unset($options["enable_shortcode"]);
 
 		wp_register_script(
 			'ithoughts-simple-ajax',
@@ -29,19 +27,15 @@ class Admin extends \ithoughts\v1_0\Singleton{
 		wp_register_script(
 			'ithoughts-ace-admin',
 			$backbone->get_base_url() . "/resources/ithoughts_ace_admin{$backbone->get_minify()}.js",
-			array('ithoughts_aliases', 'ace-editor', 'ace-autocomplete'),
-			"1.0.0"
-		);
-		wp_localize_script(
-			'ithoughts-ace-admin',
-			'ithoughts_ace',
-			$options
+			array('ithoughts_aliases', 'ace-editor', 'ace-autocomplete', "ithoughts-ace-comon"),
+			"1.0.0",
+			false
 		);
 		wp_enqueue_script('ithoughts-ace-admin');
 		wp_register_script(
 			'ithoughts-ace-options',
 			$backbone->get_base_url() . "/resources/ithoughts_ace_options{$backbone->get_minify()}.js",
-			array('ithoughts_aliases', 'ace-editor', 'ace-autocomplete', 'ithoughts-simple-ajax'),
+			array('ithoughts_aliases', 'ace-editor', 'ace-autocomplete', 'ithoughts-simple-ajax', "ithoughts-ace-comon"),
 			"1.0.0"
 		);
 		wp_enqueue_style('ithoughts-ace');

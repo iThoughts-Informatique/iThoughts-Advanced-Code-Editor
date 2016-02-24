@@ -1,83 +1,147 @@
 $d.ready(function(){
-	var langs = {php: "php", "css":"css","html":"html","js":"javascript"};
-	if(typeof ithoughts_ace.autocompletion == "undefined" || ithoughts_ace.autocompletion == null)
-		ithoughts_ace.autocompletion = {};
+	var replacedEditorsLoc = {
+		wordpressEditors:{
+			target:"#template #newcontent",
+			container:"#template",
+			preInit: function(opts){
+				opts.clone = opts.$elem[0].cloneNode();
+				opts.$textarea = $(opts.clone);
+				opts.$textarea.css({display:"none"});
 
-	function setAceOpts(editor, language){
-		editor.setTheme("ace/theme/" + ithoughts_ace.theme);
-		if(Object.keys(langs).indexOf(language) != -1)
-			editor.getSession().setMode("ace/mode/" + langs[language]);
-		editor.getSession().setUseWrapMode(true);
-		editor.setShowPrintMargin(false);
-		editor.setOptions({
-			tooltipFollowsMouse: true,
-			displayIndentGuides: true,
-			fontSize: "16px",
-			cursorStyle: "wide",
-			highlightSelectedWord: true,
-			highlightActiveLine: true,
-			behavioursEnabled: true,
-			showFoldWidgets: true,
-			enableBasicAutocompletion: ithoughts_ace.autocompletion["autocompletion_ondemand"] === true,
-			enableSnippets: true,
-			enableLiveAutocompletion: ithoughts_ace.autocompletion["autocompletion_live"] === true
-		});
-	}
+				opts.language = qs('[name="file"]');
+				if(opts.language)
+					opts.language = opts.language.value;
+				if(opts.language)
+					opts.language = opts.language.replace(/^.+\.(\w+?)$/, '$1');
+				return opts;
+			},
+			postInit: function(editor, opts){
+				if(opts.$container){
+					opts.$container.css({position:"relative"});
+				}
+				opts.$parent.append(opts.$textarea);
+				return function(){
+					if(window.matchMedia('(max-width:783px)').matches)
+						opts.$container.css({marginRight:0});
+					else
+						opts.$container.css({marginRight:200});
 
-	var $newContent = $("#template #newcontent");
-	if($newContent.length > 0){
-		var clone = $newContent[0].cloneNode();
-		var $clone = $(clone);
-		$clone.css({display:"none"});
-		var $parent = $newContent.parent();
+					var windowPos = {
+						top: $w.scrollTop() + 32,
+						bottom: $w.scrollTop() + $w.height()
+					}
+					var baseOffsetContainer = (opts.$container.offset().top - (parseInt(opts.$container.css("top")) || 0));
+					var offsetTop = Math.max(0, (windowPos.top - baseOffsetContainer));
+					opts.$container.css({top: offsetTop});
 
-		var language = qs('[name="file"]');
-		if(language)
-			language = language.value;
-		if(language)
-			language = language.replace(/^.+\.(\w+?)$/, '$1');
-		/*
-		(["g_custom","t_custom","c_custom"]).map(function(elem){
-			var editor = ace.edit(elem);
-			setAceOpts(editor);
-			var textarea = $("[data-ace-id=\"" + elem + "\"]");
-			editor.getSession().on('change', function () {
-				textarea.val(editor.getSession().getValue());
-			});
-		})
-		/**/var editor = ace.edit("newcontent");
-		$parent.append(clone);
-		editor.getSession().on('change', function () {
-			$clone.val(editor.getSession().getValue());
-		});
-		setAceOpts(editor, language);/**/
-		editorContainer = editor.container;
-		$editorContainer = $(editorContainer);
-		$container = $("#template");
 
-		function updateEditorPostion(){
-			if(window.matchMedia('(max-width:783px)').matches)
-				$container.css({marginRight:0});
-			else
-				$container.css({marginRight:200});
-			
-			var windowPos = {
-				top: $w.scrollTop() + 32,
-				bottom: $w.scrollTop() + $w.height()
+					var availableHeight = windowPos.bottom - Math.max(baseOffsetContainer, windowPos.top);
+					var submitHeight = opts.$container.height() - opts.$editorContainer.height();
+					var height = (availableHeight - submitHeight) - (parseFloat($('#template p.submit').css("margin-bottom")) || 0);
+					opts.$editorContainer.height(height);
+					editor.resize();
+				}
 			}
-			var baseOffsetContainer = ($container.offset().top - (parseInt($container.css("top")) || 0));
-			var offsetTop = Math.max(0, (windowPos.top - baseOffsetContainer));
-			$container.css({top: offsetTop});
-			
-			
-			var availableHeight = windowPos.bottom - Math.max(baseOffsetContainer, windowPos.top);
-			var submitHeight = $container.height() - $editorContainer.height();
-			var height = (availableHeight - submitHeight) - (parseFloat($('#template p.submit').css("margin-bottom")) || 0);
-			$editorContainer.height(height);
-			editor.resize();
-			
+		},
+		ithoughtsHTMLSnippets:{
+			target:"body.post-type-html_snippet #wp-content-editor-container",
+			container:"#wp-content-editor-container",
+			preInit: function(opts){
+				opts.language = "php";
+
+				opts.$textarea = $('#content').clone(); 
+				opts.$textarea.css({display:"none"});
+				opts.$parent
+					.append(opts.$textarea)
+					.prepend($.parseHTML('<div id="ed_toolbar"></div>')	);
+				$("#wp-content-editor-tools").remove();
+				return opts;
+			},
+			postInit: function(editor, opts){
+				opts.editorContainer.classList.add("ithoughts_ace-postcontent");
+				opts.editorContainer.classList.add('mce-edit-area');
+				opts.editorContainer.style.height = "388px";
+
+				opts.$container.css({marginTop:20});
+				editor.resize();
+			}
+		},
+		WpAllImport:{
+			target:"#wp_all_import_code",
+			container:"#wp_all_import_code",
+			preInit: function(opts){
+				opts.$textarea = $(".CodeMirror.cm-s-default");
+				opts.$textarea.hide();
+				var codemirror = $('.CodeMirror.cm-s-default')[0].CodeMirror;
+				opts.$textarea.val = function(text){
+					codemirror.doc.setValue(text);
+				}
+				opts.language = "php";
+				return opts;
+			}
+		},
+	};
+
+	// Ignore specified types
+	if(ithoughts_ace.ignoreReplacement && ithoughts_ace.ignoreReplacement.constructor.name == "Array" && ithoughts_ace.ignoreReplacement.length > 0){
+		for(var i = 0, j = ithoughts_ace.ignoreReplacement.length; i < j; i++){
+			if(replacedEditorsLoc[ithoughts_ace.ignoreReplacement[i]]){
+				delete replacedEditorsLoc[ithoughts_ace.ignoreReplacement[i]];
+			}
 		}
-		$container.css({position:"relative"});
-		$w.resize(updateEditorPostion).scroll(updateEditorPostion).scroll();
 	}
-})
+
+	// Merge
+	if(window.replacedEditors && window.replacedEditors.constructor.name == "Object"){
+		for(var type in replacedEditorsLoc){
+			if(typeof window.replacedEditors[type] == "undefined"){
+				window.replacedEditors[type] = replacedEditorsLoc[type];
+			}
+		}
+	} else {
+		window.replacedEditors = replacedEditorsLoc;
+	}
+
+
+
+
+	for(var type in window.replacedEditors){
+		(function(){
+			console.log("Init type", type);
+			var typeopts = window.replacedEditors[type];
+			var opts = {};
+			opts.$elem = $(typeopts["target"]);
+			if(opts.$elem.length == 1){
+				opts.$parent = opts.$elem.parent();
+
+				opts.$container = $(typeopts["container"]);
+				if(opts.$container.length > 0)
+					opts.$container = $(opts.$container[0]);
+				else
+					opts.$container = {};
+
+				if(typeof typeopts["preInit"] != "undefined" && typeopts["preInit"] != null && typeopts["preInit"].constructor.name == "Function"){
+					opts = typeopts["preInit"](opts);
+				}
+
+				var editor = ace.edit(opts.$elem[0].id);
+				ithoughts_ace.setAceOpts(editor, opts.language, opts);/**/
+				opts.editorContainer = editor.container;
+				opts.$editorContainer = $(opts.editorContainer);
+
+				var updateEditorPosition = null;
+				if(typeof typeopts["postInit"] != "undefined" && typeopts["postInit"] != null && typeopts["postInit"].constructor.name == "Function"){
+					updateEditorPosition = typeopts["postInit"](editor, opts);
+				}
+				if(opts.$textarea && opts.$textarea.length > 0){
+					editor.getSession().on('change', function () {
+						opts.$textarea.val(editor.getSession().getValue());
+					});
+				}
+				if(typeof updateEditorPosition != "undefined" && updateEditorPosition != null && updateEditorPosition.constructor.name == "Function"){
+					$w.resize(updateEditorPosition).scroll(updateEditorPosition).scroll();
+				}
+			}
+		})();
+	}
+});

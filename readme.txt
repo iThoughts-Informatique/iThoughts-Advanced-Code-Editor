@@ -4,7 +4,7 @@ Plugin URL:
 Tags: editor, editors, tool, tools, ace, ace editor, ide, help, programming, code, development, syntax, highlighting, syntax highlighting, check
 Requires at least: 3.3
 Tested up to: 4.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 
 Integrate the Code Editor Ace into your WordPress editors to help you write efficient code!
@@ -18,7 +18,7 @@ Writing code directly into your WordPress editors have never been so easy. [Ace]
 * 34 themes to style your editor the way you'll love it
 * Automatically adapt the syntax-highlight to the language of the file
 * Automatically adjust editor size to fit your screen and give you a bigger work-area
-* Auto-completion for PHP, HTML and CSS
+* Auto-completion for PHP, HTML, JavaScript and CSS
 * Auto-close parenthesis, brackets, HTML tags, etc etc...
 * Auto-indentation
 * Syntax and code checking to easily find errors
@@ -47,6 +47,9 @@ This section is empty for now.
 3. Information tooltip and completion suggestions in a theme CSS file 
 
 == Changelog ==
+
+= 1.0.1 =
+* FIX Explicit base resources path for ACE
 
 = 1.0.0 =
 * NEW Initial release

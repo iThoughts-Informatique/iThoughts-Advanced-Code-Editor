@@ -40,7 +40,7 @@ class Backbone extends \ithoughts\v1_0\Backbone{
 	}
 
 	public function ace_editor_shortcode($atts, $content = ""){
-		wp_enqueue_script("ithougts-ace-client");
+		wp_enqueue_script("ithoughts-ace-comon");
 		wp_enqueue_style('ithoughts-ace');
 
 
@@ -55,7 +55,7 @@ class Backbone extends \ithoughts\v1_0\Backbone{
 
 		if(!(isset($atts["id"]) && $atts["id"]))
 			$atts["id"] = "ace_editor-".substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 15);
-		
+
 		$attrsStr = \ithoughts\v1_0\Toolbox::concat_attrs($atts);
 		return "<textarea $attrsStr>$content</textarea>";
 	}
@@ -73,27 +73,44 @@ class Backbone extends \ithoughts\v1_0\Backbone{
 			array("ace-editor"),
 			"1.0.0"
 		);
+		wp_register_script(
+			"ace-beautify",
+			$this->get_base_url() . "/submodules/ace-builds/src-min-noconflict/ext-beautify.js",
+			array("ace-editor"),
+			"1.1.0"
+		);
 		wp_register_style(
 			'ithoughts-ace',
 			$this->get_base_url() . "/resources/ithoughts_ace{$this->get_minify()}.css",
 			array(),
 			"1.0.0"
 		);
-		if($this->get_option("enable_shortcode")){
-			wp_register_script(
-				"ithougts-ace-client",
-				$this->get_base_url() . "/resources/ithoughts_ace_client{$this->get_minify()}.js",
-				array("ithoughts_aliases", "ace-autocomplete"),
-				"1.0.0"
-			);
-			$opts = $this->get_options();
-			unset($opts["enable_shortcode"]);
-			wp_localize_script(
-				"ithougts-ace-client",
-				"ithoughts_ace",
-				$opts
-			);
+		wp_register_script(
+			'ithoughts-ace-comon',
+			$this->get_base_url() . "/resources/ithoughts_ace-comon{$this->get_minify()}.js",
+			array("ace-editor","ace-beautify","ace-autocomplete", "jquery","ithoughts_aliases"),
+			"1.1.0"
+		);
+		$opts = $this->get_options();
+		unset($opts["enable_shortcode"]);
+		if(!isset($opts["autocomplete"]))
+			$opts["autocomplete"] = array();
+		$opts["basepath"] = $this->get_base_url() . "/submodules/ace-builds/src-min-noconflict";
+		$opts["langs"] = array(
+			"php"	=> "php",
+			"js"	=> "javascript",
+			"html"	=> "html",
+			"less"	=> "less",
+			"css"	=> "css"
+		);
+		if(class_exists("\\ithoughts\\ace\\Admin")){
+			$opts["ignoreReplacement"] = apply_filters("ithoughts_ace-ignore_replaced", array());
 		}
+		wp_localize_script(
+			"ithoughts-ace-comon",
+			"ithoughts_ace",
+			$opts
+		);
 	}
 
 	private function initOptions(){
