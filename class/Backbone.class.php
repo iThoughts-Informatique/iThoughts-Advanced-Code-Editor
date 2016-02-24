@@ -77,7 +77,7 @@ class Backbone extends \ithoughts\v1_0\Backbone{
 			"ace-beautify",
 			$this->get_base_url() . "/submodules/ace-builds/src-min-noconflict/ext-beautify.js",
 			array("ace-editor"),
-			"1.1.0"
+			"1.0.1"
 		);
 		wp_register_style(
 			'ithoughts-ace',
@@ -89,7 +89,7 @@ class Backbone extends \ithoughts\v1_0\Backbone{
 			'ithoughts-ace-comon',
 			$this->get_base_url() . "/resources/ithoughts_ace-comon{$this->get_minify()}.js",
 			array("ace-editor","ace-beautify","ace-autocomplete", "jquery","ithoughts_aliases"),
-			"1.1.0"
+			"1.0.1"
 		);
 		$opts = $this->get_options();
 		unset($opts["enable_shortcode"]);

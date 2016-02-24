@@ -4,7 +4,7 @@ Plugin URL:
 Tags: editor, editors, tool, tools, ace, ace editor, ide, help, programming, code, development, syntax, highlighting, syntax highlighting, check
 Requires at least: 3.3
 Tested up to: 4.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 
 Integrate the Code Editor Ace into your WordPress editors to help you write efficient code!
@@ -47,6 +47,9 @@ This section is empty for now.
 3. Information tooltip and completion suggestions in a theme CSS file 
 
 == Changelog ==
+
+= 1.0.2 =
+* FIX Toxic update because of WordPress SVN silly
 
 = 1.0.1 =
 * FIX Explicit base resources path for ACE
