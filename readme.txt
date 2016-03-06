@@ -1,13 +1,13 @@
 === iThoughts Advanced Code Editor ===
 Contributors: Gerkin
-Plugin URL: 
+Plugin URL: http://www.gerkindevelopment.net/en/portfolio/ithoughts-advanced-code-editor/
 Tags: editor, editors, tool, tools, ace, ace editor, ide, help, programming, code, development, syntax, highlighting, syntax highlighting, check
 Requires at least: 3.3
 Tested up to: 4.4
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 
-Integrate the Code Editor Ace into your WordPress editors to help you write efficient code! Now provides code checking to avoid 500 errors into your PHP files!
+Integrate the Code Editor Ace into your WordPress editors to help you write efficient code! Now provides code checking for your PHP files!
 
 == Description ==
 
@@ -49,6 +49,9 @@ This section is empty for now.
 3. Information tooltip and completion suggestions in a theme CSS file 
 
 == Changelog ==
+
+= 1.2.1 =
+* UPD Changed deploy script
 
 = 1.2.0 =
 * NEW CodeChecker: Syntax validity checking
