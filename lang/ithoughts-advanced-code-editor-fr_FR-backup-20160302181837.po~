@@ -1,16 +1,13 @@
-# Loco Gettext template
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: iThoughts Advanced Code Editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Sun Feb 14 2016 21:25:18 GMT-1000 (TAHT)\n"
-"POT-Revision-Date: Wed Mar 02 2016 08:18:08 GMT-1000 (TAHT)\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: Wed Mar 02 2016 08:15:02 GMT-1000 (TAHT)\n"
+"Last-Translator: admin <agermain@gerkindevelopment.net>\n"
 "Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"Language: French (France)\n"
+"Plural-Forms: nplurals=2; plural=n > 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,33 +19,28 @@ msgstr ""
 "_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
 "esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
-"X-Generator: Loco - https://localise.biz/"
-
-#. Name of the plugin
-msgid "iThoughts Advanced Code Editor"
-msgstr ""
+"X-Generator: Loco - https://localise.biz/\n"
+"X-Loco-Target-Locale: fr_FR"
 
 #. URI of the plugin
 msgid "http://www.gerkindevelopment.net/en/portfolio/ithoughts-advanced-code-editor"
-msgstr ""
+msgstr "http://www.gerkindevelopment.net/portfolio/ithoughts-advanced-code-editor"
 
 #. Description of the plugin
 msgid ""
 "Integrate the Code Editor Ace into your WordPress editors to help you write "
 "efficient code!"
 msgstr ""
-
-#. Author of the plugin
-msgid "Gerkin"
-msgstr ""
+"Intègre l'éditeur de code Ace dans vos éditeurs WordPress pour vous aider à "
+"écrire du code plus efficacement!"
 
 #: ../templates/report.php:7 ../templates/report.php:13
 msgid "Report"
-msgstr ""
+msgstr "Rapport"
 
 #: ../templates/report.php:11
 msgid "Sending your report. Please wait..."
-msgstr ""
+msgstr "Envoi de votre rapport. Veuillez patienter"
 
 #: ../templates/report.php:15
 msgid ""
@@ -56,46 +48,43 @@ msgid ""
 "want to hide pre-filled data, don't hesitate. No sensible informations, such "
 "as password, should be sent through this file. Please do appropriate checks."
 msgstr ""
+"Veuillez remplir le formulaire suivant pour repporter une erreur dans le "
+"vérificateur de code. N'hésitez pas à masquer les informations critiques, "
+"tels que les mots de passes, dans le formulaire pré-rempli ci-après."
 
 #: ../templates/report.php:20
 msgid "Your name (better if I have to contact you about this problem)"
 msgstr ""
+"Votre nom (mieux si j'ai besoin de vous recontacter concernant votre "
+"problème)"
 
 #: ../templates/report.php:28
 msgid "Your email"
-msgstr ""
+msgstr "Votre email"
 
 #: ../templates/report.php:36
 msgid "Type of report"
-msgstr ""
+msgstr "Type de rapport"
 
 #: ../templates/report.php:44
 msgid "Filename"
-msgstr ""
+msgstr "Nom du fichier"
 
 #: ../templates/report.php:52
 msgid "Edited code"
-msgstr ""
+msgstr "Code édité"
 
 #: ../templates/report.php:60
 msgid "Previously included files"
-msgstr ""
+msgstr "Fichiers inclus précédemment"
 
 #: ../templates/report.php:68
 msgid "Please describe the problem"
-msgstr ""
+msgstr "Veuillez décrire le problème"
 
 #: ../templates/report.php:80
 msgid "Send report"
-msgstr ""
-
-#: ../templates/options.php:7 ../templates/options.php:13
-msgid "Options"
-msgstr ""
-
-#: ../templates/options.php:19
-msgid "Enable client-side shortcode"
-msgstr ""
+msgstr "Envoyer le rapport"
 
 #: ../templates/options.php:22
 msgid ""
@@ -104,105 +93,123 @@ msgid ""
 "gerkindevelopment.net/en/portfolio/ithoughts-advanced-code-"
 "editor/#Use_the_client_shortcode\">plugin page</a>."
 msgstr ""
-
-#: ../templates/options.php:41
-msgid "Theme"
-msgstr ""
-
-#: ../templates/options.php:49
-msgid "Autocompletion"
-msgstr ""
-
-#: ../templates/options.php:52
-msgid "Autocomplete on demande <em>(Press ctrl+space)</em>"
-msgstr ""
-
-#: ../templates/options.php:57
-msgid "Live autocomplete <em>(suggest as you type)</em>"
-msgstr ""
-
-#: ../templates/options.php:62
-msgid "Report a false positive/negative codecheck"
-msgstr ""
-
-#: ../templates/options.php:72
-msgid "Update Options"
-msgstr ""
+"Utilisez le avec <em>[ace_editor lang=\"votrelang\"]$votre-"
+">code()[/ace_editor]</em> dans un tag <em>&lt;pre&gt;</em> . Plus d'infos "
+"sur la <a href=\"https://www.gerkindevelopment.net/en/portfolio/ithoughts-"
+"advanced-code-editor/#Use_the_client_shortcode\">page du plugin</a>."
 
 #: ../class/Admin.class.php:34
 msgid "Everything seems ok."
-msgstr ""
+msgstr "Tout semble ok."
 
 #: ../class/Admin.class.php:34
 msgid "Report a false negative?"
-msgstr ""
+msgstr "Repporter un faux négatif?"
 
 #: ../class/Admin.class.php:37 ../class/Admin.class.php:99
 msgid "An error has been found. Here are the lasts words from the server:"
-msgstr ""
+msgstr "Une erreur a été trouvée. Voici les derniers mots du serveur:"
 
 #: ../class/Admin.class.php:37 ../class/Admin.class.php:99
 msgid "Report a false positive?"
-msgstr ""
+msgstr "Repporter un faux positif?"
 
 #: ../class/Admin.class.php:146
 msgid "Advanced Code Editor"
-msgstr ""
+msgstr "Advanced Code Editor"
 
 #: ../class/Admin.class.php:153 ../class/Admin.class.php:154
 msgid "Report false positive/negative"
-msgstr ""
-
-#: ../class/Admin.class.php:336
-msgid "Options updated"
-msgstr ""
-
-#: ../class/Admin.class.php:338
-msgid "Could not update options"
-msgstr ""
+msgstr "Repporter un faux négatif/positif"
 
 #: ../class/Admin.class.php:391
 msgid "False Negative: there is an unspotted error"
-msgstr ""
+msgstr "Faux négatif: il y a une erreur qui n'a pas été repérée"
 
 #: ../class/Admin.class.php:392
 msgid "False Positive: an inexistent error was spotted"
-msgstr ""
+msgstr "Faux positif: une erreur inexistante a été repérée"
 
 #: ../class/Admin.class.php:394
 msgid "Please select"
-msgstr ""
+msgstr "Veuillez sélectionner"
 
 #: ../class/Admin.class.php:413
 msgid "Please provide a bit of code."
-msgstr ""
+msgstr "Veuillez mettre un minimum de code"
 
 #: ../class/Admin.class.php:453
 msgid "You must specify if the report is a false positive or negative test."
-msgstr ""
+msgstr "Vous devez spécifier s'il s'agit d'un faux négatif ou positif."
 
 #: ../class/Admin.class.php:460
 msgid "Please provide the code to check with a bit of length."
-msgstr ""
+msgstr "Veuillez fournir le code à vérifier avec un minimum de longueur."
 
 #: ../class/Admin.class.php:467
 msgid "Please provide the file name to help debugging in context."
-msgstr ""
+msgstr "Veuillez spécifier le nom du fichier pour débugger dans le contexte."
 
 #: ../class/Admin.class.php:474
 msgid "Please describe precisely the problem you encounter."
-msgstr ""
+msgstr "Veuillez décrire précisément le problème que vous avez rencontré"
 
 #: ../class/Admin.class.php:481
 msgid "Please omit only critical files."
-msgstr ""
+msgstr "Veuillez n'omettre que les fichiers critiques"
 
 #: ../class/Admin.class.php:502
 msgid "Your report was sent. Thank you for your feedback."
-msgstr ""
+msgstr "Votre rapport a été envoyé. Merci de votre retour"
 
 #: ../class/Admin.class.php:504
 msgid ""
 "Your report was not sent. Please check your server & WordPress mail "
 "configuration or retry later."
 msgstr ""
+"Votre rapport n'a pas été envoyé. Veuillez vérifier la configuration mail de "
+"votre serveur & WordPress ou réessayez plus tard."
+
+#. Name of the plugin
+msgid "iThoughts Advanced Code Editor"
+msgstr "iThoughts Advanced Code Editor"
+
+#. Author of the plugin
+msgid "Gerkin"
+msgstr "Gerkin"
+
+#: ../templates/options.php:7 ../templates/options.php:13
+msgid "Options"
+msgstr "Options"
+
+#: ../templates/options.php:19
+msgid "Enable client-side shortcode"
+msgstr "Activer le shortcode client"
+
+#: ../templates/options.php:41
+msgid "Theme"
+msgstr "Thème"
+
+#: ../templates/options.php:49
+msgid "Autocompletion"
+msgstr "Autocomplétion"
+
+#: ../templates/options.php:52
+msgid "Autocomplete on demande <em>(Press ctrl+space)</em>"
+msgstr "Autocomplétion à la demande <em>(Appuyez sur ctrl+espace)</em>"
+
+#: ../templates/options.php:57
+msgid "Live autocomplete <em>(suggest as you type)</em>"
+msgstr "Autocomplétion en direct <em>(suggère pendant que vous écrivez)</em>"
+
+#: ../templates/options.php:67
+msgid "Update Options"
+msgstr "Mettre à jour les options"
+
+#: ../class/Admin.class.php:336
+msgid "Options updated"
+msgstr "Options mises à jour"
+
+#: ../class/Admin.class.php:338
+msgid "Could not update options"
+msgstr "Impossible de mettre à jour les options"

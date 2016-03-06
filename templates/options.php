@@ -19,7 +19,7 @@
 													<label for="enable_shortcode"><?php _e('Enable client-side shortcode', 'ithoughts-advanced-code-editor' ); ?>:</label>
 												</th>
 												<td>
-													<?php echo $optionsInputs["enable_shortcode"]; ?><label for="enable_shortcode"><?php _e('Use it with <em>[ace_editor lang="yourlang"]$your->code()[/ace_editor]</em>', 'ithoughts-advanced-code-editor' ); ?></label>
+													<?php echo $optionsInputs["enable_shortcode"]; ?><label for="enable_shortcode"><?php _e('Use it with <em>[ace_editor lang="yourlang"]$your->code()[/ace_editor]</em> in a <em>&lt;pre&gt;</em> tag. More infos on the <a href="https://www.gerkindevelopment.net/en/portfolio/ithoughts-advanced-code-editor/#Use_the_client_shortcode">plugin page</a>.', 'ithoughts-advanced-code-editor' ); ?></label>
 												</td>
 												<td rowspan="4" id="ace_opts_preview"><textarea id="test_ace_editor">&lt;?php
 	$text = (isset($_GET) &amp;&amp; isset($_GET["text"])) ? $_GET["text"] : "Hello World";
@@ -55,6 +55,11 @@ div{
 											<tr>
 												<td>
 													<?php echo $optionsInputs["autocompletion"]["autocompletion_live"]; ?><label for="autocompletion_live"><?php _e('Live autocomplete <em>(suggest as you type)</em>', 'ithoughts-advanced-code-editor' ); ?></label>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2">
+													<a href="<?php echo admin_url('options-general.php?page=ithoughts_ace_report'); ?>"><?php _e("Report a false positive/negative codecheck", "ithoughts-advanced-code-editor"); ?></a>
 												</td>
 											</tr>
 										</tbody>

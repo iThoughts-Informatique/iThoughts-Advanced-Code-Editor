@@ -2,6 +2,9 @@
     "jscodehints.detectedExclusions": [
         "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min/mode-eiffel.js",
         "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min-noconflict/worker-xquery.js",
-        "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/resources/ithoughts_ace_options.js"
+        "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/resources/ithoughts_ace_options.js",
+        "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min-noconflict/ext-split.js",
+        "mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min-noconflict/fold",
+        "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min-noconflict/mode-gitignore.js"
     ]
 }

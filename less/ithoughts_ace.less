@@ -1,3 +1,37 @@
+/*body#tinymce{
+pre.ace_editor{
+&:before{
+content: attr(data-code);
+}
+min-height: auto;
+}
+}*/
+
+
+.codecheck{
+	width: auto!important;
+	margin: 5px 10px;
+	display: none;
+	color: rgb(255, 255, 255);
+	border-radius: 5px;
+	padding: 5px 10px;
+	display: inline-block;
+	border: 1px solid transparent;
+
+	&.codecheck-php{
+		&:after{
+			content: "{PHP}";
+			margin-left: 5px;
+		}
+	}
+
+	&.codecheck-on{
+		background: rgb(7, 70, 89) none repeat scroll 0% 0%;
+		border-color: rgb(7, 70, 89);
+		box-shadow: 1px 1px 5px #666;
+	}
+}
+
 .ace_editor{
 	min-height: 100px;
 }
@@ -8,11 +42,46 @@
 
 #template{
 	div{
-		margin-right: 0;
+		margin-right: 0!important;
 	}
 
 	.ace_editor{
 		.ace_editor;
+	}
+
+	.submit{
+		margin-bottom: 10px;
+		margin-top: 0;
+		position: relative;
+		z-index: 1;
+
+		[data-waschecked="checked-invalid"]{
+			border-color: #ffb900;
+			border-width: 2.5px;
+			box-shadow: 0 0 5px #ffb900;
+			color: #555;
+			background: #f7f7f7;
+			display: inline-block;
+			text-decoration: none;
+			font-size: 13px;
+			line-height: 26px;
+			height: 28px;
+			margin: 0;
+			padding: 0 10px 1px;
+			cursor: pointer;
+			border-style: solid;
+			-webkit-appearance: none;
+			-webkit-border-radius: 3px;
+			border-radius: 3px;
+			white-space: nowrap;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			text-shadow: none;
+		}
+		[data-waschecked="checked-valid"]{
+
+		}
 	}
 }
 
@@ -25,5 +94,28 @@
 		top: 0;
 		bottom: 0;
 		width: 100%;
+	}
+}
+
+#checkresult{
+	display: inline-block;
+
+	form{
+		display: inline-block;
+		margin: 5px 0 5px 15px;
+		vertical-align: baseline;
+
+		.button.button-secondary{
+			vertical-align: baseline;
+
+			.dashicons{
+				vertical-align: text-top;
+			}
+		}
+
+	}
+	pre{
+		white-space: normal;
+		margin: 0;
 	}
 }

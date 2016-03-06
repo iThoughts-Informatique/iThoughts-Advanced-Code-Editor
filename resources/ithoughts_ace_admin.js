@@ -8,14 +8,32 @@ $d.ready(function(){
 				opts.$textarea = $(opts.clone);
 				opts.$textarea.css({display:"none"});
 
-				opts.language = qs('[name="file"]');
-				if(opts.language)
-					opts.language = opts.language.value;
+				var fileInput = qs('[name="file"]');
+				if(fileInput)
+					opts.language = fileInput.value;
 				if(opts.language)
 					opts.language = opts.language.replace(/^.+\.(\w+?)$/, '$1');
+
+				// Check if we can lock the POST for sandbox
+				if(opts.language == "php"){
+					$("#template .submit").append('<p class="codecheck codecheck-php codecheck-on">CodeCheck</p>');
+					console.info("Sandboxing");
+					var submit = gei("submit");
+					$("#template").submit(function(e){
+						if(submit.getAttribute("data-waschecked") != "unchecked"){
+						} else {
+							return ithoughts_ace.sandboxPhp(opts.$textarea.val(), fileInput.value, e, submit);
+						}
+					});
+				}
 				return opts;
 			},
 			postInit: function(editor, opts){
+				if(opts.language == "php"){
+					editor.on("change",function(){
+						submit.setAttribute("data-waschecked", "unchecked");
+					});
+				}
 				if(opts.$container){
 					opts.$container.css({position:"relative"});
 				}
@@ -125,7 +143,7 @@ $d.ready(function(){
 				}
 
 				var editor = ace.edit(opts.$elem[0].id);
-				ithoughts_ace.setAceOpts(editor, opts.language, opts);/**/
+				ithoughts_ace.setAceOpts(editor, opts.language, opts);
 				opts.editorContainer = editor.container;
 				opts.$editorContainer = $(opts.editorContainer);
 
@@ -145,3 +163,40 @@ $d.ready(function(){
 		})();
 	}
 });
+
+ithoughts_ace.sandboxPhp = function(content, file, event, submitButton, form){
+	console.log(form);
+	function setResultDisplay(data){
+		try{
+			if(data && data.constructor.name == "String")
+				data = JSON.parse(data);
+			$("#checkresult").remove();
+			var classes = ["notice"];
+			if(data.success && data.data && data.data.text)
+				classes.push("notice-success");
+			else
+				classes.push("notice-error");
+			$("#submit").parent().css({display: "inline-block",width: "auto"}).parent().append($.parseHTML('<div id="checkresult" class="' + classes.join(" ") + '">' + (data.data && data.data.text ? data.data.text : "<p>Could not parse server response</p>") + "</div>"));
+			if(data.success && data.data && data.data.text){
+				submitButton.setAttribute("data-waschecked","checked-valid");
+				$(submitButton).click();
+			} else {
+				submitButton.setAttribute("data-waschecked","checked-invalid");
+			}
+		} catch(e){
+			$("#submit").parent().css({display: "inline-block",width: "auto"}).parent().append($.parseHTML('<div id="checkresult" class="notice notice-error"><p>Could not parse server response</p></div>'));
+		}
+	}
+
+	$.post(ithoughts_ace.ajax, {
+		"code": content,
+		"file": file,
+		"action": "ithoughts_ace_check_syntax"
+	}).success(function(data){
+		setResultDisplay(data);
+	}).fail(function(data){
+		setResultDisplay(data);
+	});
+	event.preventDefault();
+	return false;
+}

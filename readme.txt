@@ -4,25 +4,27 @@ Plugin URL:
 Tags: editor, editors, tool, tools, ace, ace editor, ide, help, programming, code, development, syntax, highlighting, syntax highlighting, check
 Requires at least: 3.3
 Tested up to: 4.4
-Stable tag: 1.0.2
+Stable tag: 1.2.0
 License: GPLv2 or later
 
-Integrate the Code Editor Ace into your WordPress editors to help you write efficient code!
+Integrate the Code Editor Ace into your WordPress editors to help you write efficient code! Now provides code checking to avoid 500 errors into your PHP files!
 
 == Description ==
 
-Writing code directly into your WordPress editors have never been so easy. [Ace](https://ace.c9.io/#nav=about), the famous Code Editor used by [Cloud9 Web-IDE](https://c9.io/), will perfectly fit your needs to be more effective and reduce coding errors.
+Writing code directly into your WordPress editors have never been so easy. [Ace](https://ace.c9.io/#nav=about), the famous Code Editor used by [Cloud9 Web-IDE](https://c9.io/), will perfectly fit your needs to be more effective and reduce coding errors. **It now comes with a code check process on PHP files, to never again crash your server down!**
 
 = Features =
 * Replace the Appearance and Plugin editor with ACE
+* **Checks your code to avoid submission if syntax errors are found!**
 * 34 themes to style your editor the way you'll love it
 * Automatically adapt the syntax-highlight to the language of the file
 * Automatically adjust editor size to fit your screen and give you a bigger work-area
 * Auto-completion for PHP, HTML, JavaScript and CSS
 * Auto-close parenthesis, brackets, HTML tags, etc etc...
 * Auto-indentation
-* Syntax and code checking to easily find errors
+* Syntax and code checking with markers in editor to easily find errors
 * Possible to enable ace editor in client-side by a shortcode (usefull for forums with code tips)
+* Works well with [iThoughts HTML Snippets](https://www.gerkindevelopment.net/en/portfolio/ithoughts-html-snippets/) to create re-usable pure HTML or hard-coded PHP snippets
 
 Where WordPress says **Code Is Poetry**, iThoughts Advanced Code Editor reply **Code Is Calligraphy**
 
@@ -48,6 +50,11 @@ This section is empty for now.
 
 == Changelog ==
 
+= 1.2.0 =
+* NEW CodeChecker: Syntax validity checking
+* UPD Client-Side shortcode
+* UPD Scripts
+
 = 1.0.2 =
 * FIX Toxic update because of WordPress SVN silly
 
@@ -59,6 +66,10 @@ This section is empty for now.
 
 
 == Upgrade Notice ==
+
+= 1.2.0 =
+Introducing CodeChecker: part 1. This module will check your PHP file to detect syntax errors
+It will help you avoid crashing your site with typos or other syntax faults.
 
 = 1.0.0 =
 Initial release

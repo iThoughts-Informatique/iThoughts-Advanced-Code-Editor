@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: iThoughts Advanced Code Editor\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Sun Feb 14 2016 21:25:18 GMT-1000 (TAHT)\n"
-"POT-Revision-Date: Wed Mar 02 2016 08:18:08 GMT-1000 (TAHT)\n"
+"POT-Revision-Date: Wed Mar 02 2016 08:06:09 GMT-1000 (TAHT)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -121,11 +121,7 @@ msgstr ""
 msgid "Live autocomplete <em>(suggest as you type)</em>"
 msgstr ""
 
-#: ../templates/options.php:62
-msgid "Report a false positive/negative codecheck"
-msgstr ""
-
-#: ../templates/options.php:72
+#: ../templates/options.php:67
 msgid "Update Options"
 msgstr ""
 

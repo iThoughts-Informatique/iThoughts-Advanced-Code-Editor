@@ -7,7 +7,7 @@
 namespace ithoughts\ace;
 
 
-class Backbone extends \ithoughts\v1_0\Backbone{
+class Backbone extends \ithoughts\v1_1_1\Backbone{
 
 	function __construct($plugin_base) {
 		if(defined("WP_DEBUG") && WP_DEBUG)
@@ -27,37 +27,64 @@ class Backbone extends \ithoughts\v1_0\Backbone{
 			)
 		);
 
-		$this->options			= $this->initOptions();
-
-		if($this->get_option("enable_shortcode")){
-			add_shortcode("ace_editor", array(&$this, "ace_editor_shortcode"));
-		}
+		add_shortcode("ace_editor", array(&$this, "ace_editor_shortcode"));
 
 		add_action( 'plugins_loaded',	array( &$this,	'localisation')	);
 		add_action( 'init',				array( &$this,	'register_scripts_and_styles' )	);
 
 		parent::__construct();
 	}
+	
+	public function compose_ace_js_obj($opts = NULL){
+		if($opts == NULL)
+		$opts = $this->get_options();
+			unset($opts["enable_shortcode"]);
+			if(!isset($opts["autocomplete"]))
+				$opts["autocomplete"] = array();
+			$opts["basepath"] = $this->get_base_url() . "/submodules/ace-builds/src-min-noconflict";
+			$opts["langs"] = array(
+				"php"	=> "php",
+				"js"	=> "javascript",
+				"html"	=> "html",
+				"less"	=> "less",
+				"css"	=> "css"
+			);
+			$opts["ajax"] = admin_url('admin-ajax.php');
+			if(class_exists("\\ithoughts\\ace\\Admin")){
+				$opts["ignoreReplacement"] = apply_filters("ithoughts_ace-ignore_replaced", array());
+			}
+		return $opts;
+	}
 
 	public function ace_editor_shortcode($atts, $content = ""){
-		wp_enqueue_script("ithoughts-ace-comon");
-		wp_enqueue_style('ithoughts-ace');
+		$opts = $this->get_options();
+		if($opts["enable_shortcode"]){
+			wp_localize_script(
+				"ithoughts-ace-comon",
+				"ithoughts_ace",
+				$this->compose_ace_js_obj($opts)
+			);
+			
+			wp_enqueue_script("ithoughts-ace-comon");
+			wp_enqueue_style('ithoughts-ace');
 
+			if(isset($atts["lang"]) && $atts["lang"]){
+				$atts["data-lang"] = $atts["lang"];
+				unset($atts["lang"]);
+			}
+			if(isset($atts["class"]) && $atts["class"])
+				$atts["class"] .= "ace-editor";
+			else
+				$atts["class"] = "ace-editor";
 
-		if(isset($atts["lang"]) && $atts["lang"]){
-			$atts["data-lang"] = $atts["lang"];
-			unset($atts["lang"]);
+			if(!(isset($atts["id"]) && $atts["id"]))
+				$atts["id"] = "ace_editor-".substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 15);
+
+			$attrsStr = \ithoughts\v1_1\Toolbox::concat_attrs($atts);
+			return "<textarea $attrsStr>$content</textarea>";
+		} else {
+			return "";
 		}
-		if(isset($atts["class"]) && $atts["class"])
-			$atts["class"] .= "ace-editor";
-		else
-			$atts["class"] = "ace-editor";
-
-		if(!(isset($atts["id"]) && $atts["id"]))
-			$atts["id"] = "ace_editor-".substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 15);
-
-		$attrsStr = \ithoughts\v1_0\Toolbox::concat_attrs($atts);
-		return "<textarea $attrsStr>$content</textarea>";
 	}
 
 	public function register_scripts_and_styles(){
@@ -83,57 +110,14 @@ class Backbone extends \ithoughts\v1_0\Backbone{
 			'ithoughts-ace',
 			$this->get_base_url() . "/resources/ithoughts_ace{$this->get_minify()}.css",
 			array(),
-			"1.0.0"
+			"1.1.0"
 		);
 		wp_register_script(
 			'ithoughts-ace-comon',
 			$this->get_base_url() . "/resources/ithoughts_ace-comon{$this->get_minify()}.js",
 			array("ace-editor","ace-beautify","ace-autocomplete", "jquery","ithoughts_aliases"),
-			"1.0.1"
+			"1.1.0"
 		);
-		$opts = $this->get_options();
-		unset($opts["enable_shortcode"]);
-		if(!isset($opts["autocomplete"]))
-			$opts["autocomplete"] = array();
-		$opts["basepath"] = $this->get_base_url() . "/submodules/ace-builds/src-min-noconflict";
-		$opts["langs"] = array(
-			"php"	=> "php",
-			"js"	=> "javascript",
-			"html"	=> "html",
-			"less"	=> "less",
-			"css"	=> "css"
-		);
-		if(class_exists("\\ithoughts\\ace\\Admin")){
-			$opts["ignoreReplacement"] = apply_filters("ithoughts_ace-ignore_replaced", array());
-		}
-		wp_localize_script(
-			"ithoughts-ace-comon",
-			"ithoughts_ace",
-			$opts
-		);
-	}
-
-	private function initOptions(){
-		$opts = array_merge($this->get_options(true), get_option( $this->optionsName, $this->get_options(true) ));
-		return $opts;
-	}
-
-	public function get_options($onlyDefaults = false){
-		if($onlyDefaults)
-			return $this->defaults;
-
-		return $this->options;
-	}
-
-	public function get_option($name, $onlyDefaults = false){
-		$arr = $this->options;
-		if($onlyDefaults)
-			return $this->defaults;
-
-		if(isset($arr[$name]))
-			return $arr[$name];
-		else
-			return NULL;
 	}
 
 	public function localisation(){
