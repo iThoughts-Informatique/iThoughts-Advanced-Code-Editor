@@ -131,14 +131,14 @@
                     "template": "ithoughts-index-doc"
                 }
             },
-			{
+            {
                 "cp": [
                     {
                         "from": ".",
                         "to": "/mnt/workdata/php/WP-Plugins/svn/ithoughts_advanced_code_editor/trunk"
                     }
                 ]
-			},
+            },
             {
                 "git": {
                     "actions": [
@@ -209,6 +209,10 @@
                 "md5": "54c9e2689ca3c16069b23e56674fe843",
                 "sha1": "3add8be91f6e6cd8c0d0085675bb8bf4e0606c09"
             },
+            "./class/Admin.class.php": {
+                "sha1": "fdbeb6ee11201710d0107fde9f69034b60bbffaf",
+                "md5": "1a9f932728dfebfb82cbd4ed9b0b20b7"
+            },
             "./class/Backbone.class.php": {
                 "sha1": "b6e1f756163be8f7ecc749160a6895dc7f344a15",
                 "md5": "fd5a71ab12cdc5c9c4295c8ff1ae1ffe"
@@ -232,10 +236,6 @@
             "./resources/ithoughts_ace_options.js": {
                 "sha1": "e828d0b74597d279270d232a122900507fbbf3ea",
                 "md5": "6be50ef1d99a58e3a6382fe45c0c25bd"
-            },
-            "./class/Admin.class.php": {
-                "sha1": "fdbeb6ee11201710d0107fde9f69034b60bbffaf",
-                "md5": "1a9f932728dfebfb82cbd4ed9b0b20b7"
             }
         },
         "versions": {
