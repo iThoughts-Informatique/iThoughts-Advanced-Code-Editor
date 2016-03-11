@@ -18,7 +18,7 @@ class Backbone extends \ithoughts\v1_1_1\Backbone{
 		$this->base_lang_path	= $plugin_base . '/lang';
 		$this->base_url			= plugins_url( '', dirname(__FILE__) );
 
-		$this->defaults			= array(
+		$this->defaultOptions	= array(
 			"enable_shortcode"	=> false,
 			"theme"				=> "monokai",
 			"autocompletion"	=> array(
@@ -34,25 +34,26 @@ class Backbone extends \ithoughts\v1_1_1\Backbone{
 
 		parent::__construct();
 	}
-	
+
 	public function compose_ace_js_obj($opts = NULL){
 		if($opts == NULL)
-		$opts = $this->get_options();
-			unset($opts["enable_shortcode"]);
-			if(!isset($opts["autocomplete"]))
-				$opts["autocomplete"] = array();
-			$opts["basepath"] = $this->get_base_url() . "/submodules/ace-builds/src-min-noconflict";
-			$opts["langs"] = array(
-				"php"	=> "php",
-				"js"	=> "javascript",
-				"html"	=> "html",
-				"less"	=> "less",
-				"css"	=> "css"
-			);
-			$opts["ajax"] = admin_url('admin-ajax.php');
-			if(class_exists("\\ithoughts\\ace\\Admin")){
-				$opts["ignoreReplacement"] = apply_filters("ithoughts_ace-ignore_replaced", array());
-			}
+			$opts = $this->get_options();
+		var_dump($opts);
+		unset($opts["enable_shortcode"]);
+		if(!isset($opts["autocomplete"]))
+			$opts["autocomplete"] = array();
+		$opts["basepath"] = $this->get_base_url() . "/submodules/ace-builds/src-min-noconflict";
+		$opts["langs"] = array(
+			"php"	=> "php",
+			"js"	=> "javascript",
+			"html"	=> "html",
+			"less"	=> "less",
+			"css"	=> "css"
+		);
+		$opts["ajax"] = admin_url('admin-ajax.php');
+		if(class_exists("\\ithoughts\\ace\\Admin")){
+			$opts["ignoreReplacement"] = apply_filters("ithoughts_ace-ignore_replaced", array());
+		}
 		return $opts;
 	}
 
@@ -64,7 +65,7 @@ class Backbone extends \ithoughts\v1_1_1\Backbone{
 				"ithoughts_ace",
 				$this->compose_ace_js_obj($opts)
 			);
-			
+
 			wp_enqueue_script("ithoughts-ace-comon");
 			wp_enqueue_style('ithoughts-ace');
 

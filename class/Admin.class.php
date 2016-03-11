@@ -116,10 +116,11 @@ class Admin extends \ithoughts\v1_0\Singleton{
 	public function register_scripts(){
 		$backbone = \ithoughts\ace\Backbone::get_instance();
 
+		$opts = $backbone->compose_ace_js_obj();
 		wp_localize_script(
 			"ithoughts-ace-comon",
 			"ithoughts_ace",
-			$backbone->compose_ace_js_obj()
+			$opts
 		);
 
 		wp_register_script(
