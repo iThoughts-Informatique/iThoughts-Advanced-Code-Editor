@@ -148,7 +148,11 @@
                             "action": "push"
                         }
                     ]
-                }
+                },
+				"cp": {
+					"from": ".",
+					"to": "/mnt/workdata/php/WP-Plugins/svn/ithoughts_advanced_code_editor/trunk"
+				}
             },
             [
                 {
