@@ -206,8 +206,8 @@
         ],
         "checksums": {
             "./ithoughts_advanced_code_editor.php": {
-                "md5": "54c9e2689ca3c16069b23e56674fe843",
-                "sha1": "3add8be91f6e6cd8c0d0085675bb8bf4e0606c09"
+                "sha1": "d6d763e3494a5f107780e0e6ff63cb438b15506e",
+                "md5": "36b85883cb5da30057f0bb6516780ddd"
             },
             "./class/Admin.class.php": {
                 "sha1": "fdbeb6ee11201710d0107fde9f69034b60bbffaf",
