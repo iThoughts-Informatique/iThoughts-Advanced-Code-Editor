@@ -1,234 +1,237 @@
 {
-	"project": {
-		"project_name": "iThoughts HTML Snippets",
-		"author": "Gerkin",
-		"documentation": {
-			"base": {
-				"url": "http://documentation.loc/ithoughts-advanced-code-editor",
-				"path": "/mnt/workdata/php/WP-Plugins/doc/ithoughts-advanced-code-editor"
-			},
-			"format": [
-				"%BASE%",
-				"%VERSION_MINOR%",
-				"%TYPE%"
-			],
-			"resources": {
-				"url": "/resources",
-				"path": "/mnt/workdata/php/WP-Plugins/doc/resources/"
-			}
-		},
-		"company": {
-			"start": "2015",
-			"name": "iThoughts Informatique"
-		},
-		"commands": [
-			{
-				"git": {
-					"actions": [
-						{
-							"action": "commit",
-							"data": {
-								"message": "Pre-process release v%VERSION%"
-							}
-						}
-					]
-				}
-			},
-			{
-				"files-version": {
-					"selection": {
-						"\\.(js|css|php)$": true,
-						"\\.min\\.(js|css|php)$": false,
-						"^\\.\\/submodules($|\\/)": false,
-						"^\\.\\/templates($|\\/)": false
-					},
-					"setDiffs": {
-						"/(@version\\s+)\\d+(\\.\\d+)*": "$1%VERSION%"
-					}
-				}
-			},
-			{
-				"minify": {
-					"actions": {
-						"each": {
-							"before": null,
-							"after": "git.add"
-						}
-					},
-					"selection": {
-						"\\.(js|css)$": true,
-						"\\.min\\.(js|css)$": false,
-						"^\\.\\/submodules($|\\/)": false
-					},
-					"output": {
-						"from": "^(.*)(\\.(?:css|js))$",
-						"to": "$1.min$2"
-					}
-				},
-				"wordpress-upgrade": {
-					"command": {
-						"bin": "nano",
-						"args": [
-							"-t",
-							"%FILE%"
-						],
-						"closeMessage": "Press Ctrl+X to end."
-					}
-				}
-			},
-			{
-				"jsdoc": {
-					"private": true,
-					"selection": {
-						"\\.(js|css)$": true,
-						"\\.min\\.(js|css)$": false,
-						"^\\.\\/submodules($|\\/)": false
-					},
-					"template": "gerkindevelopment",
-					"typepath": "javascript"
-				},
-				"phpdoc": {
-					"private": true,
-					"templates": {
-						"gerkindevelopment": {}
-					},
-					"replace_output": {
-						"%MENU%": "<li><a href=\"http://www.gerkindevelopment.net/\">GerkinDevelopment</a></li><li><a href=\"https://www.gerkindevelopment.net/en/portfolio/ithoughts-advanced-code-editor/\">Plugin page</a></li><li><a href=\"https://wordpress.org/plugins/ithoughts-advanced-code-editor/\">WordPress page</a></li><li><a href=\"http://documentation.gerkindevelopment.net/ithoughts-advanced-code-editor/%VERSION_MINOR%/javascript/index.html\">Javascript documentation</a></li>",
-						"%COMPANY-YEAR%": "%COMPANY-YEAR%"
-					},
-					"selection": {
-						"\\.php$": true
-					},
-					"typepath": "php"
-				},
-				"ithoughts-index-doc": {
-					"template": "ithoughts-index-doc",
-					"head_links": {
-						"GerkinDevelopment page": "https://www.gerkindevelopment.net/en/portfolio/ithoughts-advanced-code-editor/",
-						"WordPress page": "https://wordpress.org/plugins/ithoughts-advanced-code-editor/",
-						"Back to Documentation Index": "/ithoughts-advanced-code-editor/%VERSION_MINOR%/"
-					},
-					"doc_links": [
-						{
-							"labels": {
-								"main": "JavaScript",
-								"sub": "Client side"
-							},
-							"image": "/images/clientside.jpg",
-							"link": "/javascript/index.html"
-						},
-						{
-							"labels": {
-								"main": "PHP",
-								"sub": "Server side"
-							},
-							"image": "/images/serverside.jpg",
-							"link": "/php/index.html"
-						}
-					]
-				},
-				"version-history": {
-					"template": "ithoughts-index-doc"
-				}
-			},
-			{
-				"git": {
-					"actions": [
-						{
-							"action": "commit"
-						},
-						{
-							"action": "tag",
-							"data": {
-								"label": "v%VERSION%",
-								"message": "Release version %VERSION%"
-							}
-						},
-						{
-							"action": "push"
-						}
-					]
-				}
-			},
-			[
-				{
-					"git": {
-						"path": "/mnt/workdata/php/WP-Plugins/doc",
-						"actions": [
-							{
-								"action": "commit",
-								"data": {
-									"message": "Release version %VERSION% of iThoughts Advanced Code Editor"
-								}
-							},
-							{
-								"action": "push"
-							}
-						]
-					}
-				},
-				{
-					"svn": {
-						"path": "/mnt/workdata/php/WP-Plugins/svn/ithoughts_advanced_code_editor",
-						"actions": [
-							{
-								"action": "add",
-								"data": {
-									"path": "",
-									"force": true
-								}
-							},
-							{
-								"action": "cp",
-								"data": {
-									"from": "trunk",
-									"to": "tags/%VERSION%"
-								}
-							},
-							{
-								"action": "commit",
-								"data": {
-									"message": "Release version %VERSION%"
-								}
-							}
-						]
-					}
-				}
-			]
-		],
-		"checksums": {
-			"./ithoughts_advanced_code_editor.php": {
-				"md5": "54c9e2689ca3c16069b23e56674fe843",
-				"sha1": "3add8be91f6e6cd8c0d0085675bb8bf4e0606c09"
-			},
-			"./class/Admin.class.php": {
-				"sha1": "fdbeb6ee11201710d0107fde9f69034b60bbffaf",
-				"md5": "1a9f932728dfebfb82cbd4ed9b0b20b7"
-			},
-			"./class/Backbone.class.php": {
-				"sha1": "b6e1f756163be8f7ecc749160a6895dc7f344a15",
-				"md5": "fd5a71ab12cdc5c9c4295c8ff1ae1ffe"
-			},
-			"./class/checkSyntax.php": {
-				"sha1": "f940c48ff6e1bf1b8781e3a183ed580d8005b324",
-				"md5": "b24ceb90e691d5eb99f865e7006dd317"
-			},
-			"./resources/ithoughts_ace-comon.js": {
-				"md5": "5bdfd8b7fd3f47a48fd82c95a5a24b18",
-				"sha1": "990dad378bd5f194aa80b974e2f1a58c35872de4"
-			},
-			"./resources/ithoughts_ace.css": {
-				"sha1": "c94f4f8820ed126cef3b15881265b89ab4a44d98",
-				"md5": "09f8c7d91791a972180f18bd7f92752d"
-			},
-			"./resources/ithoughts_ace_admin.js": {
-				"sha1": "7e10089062674fb98b05f46d80100c06cd2f4552",
-				"md5": "703f2c7caaaa8a221e96e442f8975af7"
-			},
-			"./resources/ithoughts_ace_options.js": {
-				"sha1": "e828d0b74597d279270d232a122900507fbbf3ea",
-				"md5": "6be50ef1d99a58e3a6382fe45c0c25bd"
-			}
-		}
-	}
+    "project": {
+        "project_name": "iThoughts HTML Snippets",
+        "author": "Gerkin",
+        "documentation": {
+            "base": {
+                "url": "http://documentation.loc/ithoughts-advanced-code-editor",
+                "path": "/mnt/workdata/php/WP-Plugins/doc/ithoughts-advanced-code-editor"
+            },
+            "format": [
+                "%BASE%",
+                "%VERSION_MINOR%",
+                "%TYPE%"
+            ],
+            "resources": {
+                "url": "/resources",
+                "path": "/mnt/workdata/php/WP-Plugins/doc/resources/"
+            }
+        },
+        "company": {
+            "start": "2015",
+            "name": "iThoughts Informatique"
+        },
+        "commands": [
+            {
+                "git": {
+                    "actions": [
+                        {
+                            "action": "commit",
+                            "data": {
+                                "message": "Pre-process release v%VERSION%"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "files-version": {
+                    "selection": {
+                        "\\.(js|css|php)$": true,
+                        "\\.min\\.(js|css|php)$": false,
+                        "^\\.\\/submodules($|\\/)": false,
+                        "^\\.\\/templates($|\\/)": false
+                    },
+                    "setDiffs": {
+                        "/(@version\\s+)\\d+(\\.\\d+)*": "$1%VERSION%"
+                    }
+                }
+            },
+            {
+                "minify": {
+                    "actions": {
+                        "each": {
+                            "before": null,
+                            "after": "git.add"
+                        }
+                    },
+                    "selection": {
+                        "\\.(js|css)$": true,
+                        "\\.min\\.(js|css)$": false,
+                        "^\\.\\/submodules($|\\/)": false
+                    },
+                    "output": {
+                        "from": "^(.*)(\\.(?:css|js))$",
+                        "to": "$1.min$2"
+                    }
+                },
+                "wordpress-upgrade": {
+                    "command": {
+                        "bin": "nano",
+                        "args": [
+                            "-t",
+                            "%FILE%"
+                        ],
+                        "closeMessage": "Press Ctrl+X to end."
+                    }
+                }
+            },
+            {
+                "jsdoc": {
+                    "private": true,
+                    "selection": {
+                        "\\.(js|css)$": true,
+                        "\\.min\\.(js|css)$": false,
+                        "^\\.\\/submodules($|\\/)": false
+                    },
+                    "template": "gerkindevelopment",
+                    "typepath": "javascript"
+                },
+                "phpdoc": {
+                    "private": true,
+                    "templates": {
+                        "gerkindevelopment": {}
+                    },
+                    "replace_output": {
+                        "%MENU%": "<li><a href=\"http://www.gerkindevelopment.net/\">GerkinDevelopment</a></li><li><a href=\"https://www.gerkindevelopment.net/en/portfolio/ithoughts-advanced-code-editor/\">Plugin page</a></li><li><a href=\"https://wordpress.org/plugins/ithoughts-advanced-code-editor/\">WordPress page</a></li><li><a href=\"http://documentation.gerkindevelopment.net/ithoughts-advanced-code-editor/%VERSION_MINOR%/javascript/index.html\">Javascript documentation</a></li>",
+                        "%COMPANY-YEAR%": "%COMPANY-YEAR%"
+                    },
+                    "selection": {
+                        "\\.php$": true
+                    },
+                    "typepath": "php"
+                },
+                "ithoughts-index-doc": {
+                    "template": "ithoughts-index-doc",
+                    "head_links": {
+                        "GerkinDevelopment page": "https://www.gerkindevelopment.net/en/portfolio/ithoughts-advanced-code-editor/",
+                        "WordPress page": "https://wordpress.org/plugins/ithoughts-advanced-code-editor/",
+                        "Back to Documentation Index": "/ithoughts-advanced-code-editor/%VERSION_MINOR%/"
+                    },
+                    "doc_links": [
+                        {
+                            "labels": {
+                                "main": "JavaScript",
+                                "sub": "Client side"
+                            },
+                            "image": "/images/clientside.jpg",
+                            "link": "/javascript/index.html"
+                        },
+                        {
+                            "labels": {
+                                "main": "PHP",
+                                "sub": "Server side"
+                            },
+                            "image": "/images/serverside.jpg",
+                            "link": "/php/index.html"
+                        }
+                    ]
+                },
+                "version-history": {
+                    "template": "ithoughts-index-doc"
+                }
+            },
+            {
+                "git": {
+                    "actions": [
+                        {
+                            "action": "commit"
+                        },
+                        {
+                            "action": "tag",
+                            "data": {
+                                "label": "v%VERSION%",
+                                "message": "Release version %VERSION%"
+                            }
+                        },
+                        {
+                            "action": "push"
+                        }
+                    ]
+                }
+            },
+            [
+                {
+                    "git": {
+                        "path": "/mnt/workdata/php/WP-Plugins/doc",
+                        "actions": [
+                            {
+                                "action": "commit",
+                                "data": {
+                                    "message": "Release version %VERSION% of iThoughts Advanced Code Editor"
+                                }
+                            },
+                            {
+                                "action": "push"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "svn": {
+                        "path": "/mnt/workdata/php/WP-Plugins/svn/ithoughts_advanced_code_editor",
+                        "actions": [
+                            {
+                                "action": "add",
+                                "data": {
+                                    "path": "",
+                                    "force": true
+                                }
+                            },
+                            {
+                                "action": "cp",
+                                "data": {
+                                    "from": "trunk",
+                                    "to": "tags/%VERSION%"
+                                }
+                            },
+                            {
+                                "action": "commit",
+                                "data": {
+                                    "message": "Release version %VERSION%"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        ],
+        "checksums": {
+            "./ithoughts_advanced_code_editor.php": {
+                "md5": "54c9e2689ca3c16069b23e56674fe843",
+                "sha1": "3add8be91f6e6cd8c0d0085675bb8bf4e0606c09"
+            },
+            "./class/Admin.class.php": {
+                "sha1": "fdbeb6ee11201710d0107fde9f69034b60bbffaf",
+                "md5": "1a9f932728dfebfb82cbd4ed9b0b20b7"
+            },
+            "./class/Backbone.class.php": {
+                "sha1": "b6e1f756163be8f7ecc749160a6895dc7f344a15",
+                "md5": "fd5a71ab12cdc5c9c4295c8ff1ae1ffe"
+            },
+            "./class/checkSyntax.php": {
+                "sha1": "f940c48ff6e1bf1b8781e3a183ed580d8005b324",
+                "md5": "b24ceb90e691d5eb99f865e7006dd317"
+            },
+            "./resources/ithoughts_ace-comon.js": {
+                "md5": "5bdfd8b7fd3f47a48fd82c95a5a24b18",
+                "sha1": "990dad378bd5f194aa80b974e2f1a58c35872de4"
+            },
+            "./resources/ithoughts_ace.css": {
+                "sha1": "c94f4f8820ed126cef3b15881265b89ab4a44d98",
+                "md5": "09f8c7d91791a972180f18bd7f92752d"
+            },
+            "./resources/ithoughts_ace_admin.js": {
+                "sha1": "7e10089062674fb98b05f46d80100c06cd2f4552",
+                "md5": "703f2c7caaaa8a221e96e442f8975af7"
+            },
+            "./resources/ithoughts_ace_options.js": {
+                "sha1": "e828d0b74597d279270d232a122900507fbbf3ea",
+                "md5": "6be50ef1d99a58e3a6382fe45c0c25bd"
+            }
+        },
+        "versions": {
+            "1.2": "http://documentation.loc/ithoughts-advanced-code-editor/1.2"
+        }
+    }
 }
