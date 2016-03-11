@@ -1,4 +1,16 @@
 <?php
+
+/**
+ * @file Main plugin includer file
+ *
+ * @copyright 2016 iThoughts Informatique
+ * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
+ * @package ithoughts_advanced_code_editor
+ *
+ * @version 1.2.1
+ */
+
+
 /*
 Plugin Name:	iThoughts Advanced Code Editor
 Plugin URI:		http://www.gerkindevelopment.net/en/portfolio/ithoughts-advanced-code-editor/

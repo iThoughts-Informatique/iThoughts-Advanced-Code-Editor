@@ -39,7 +39,7 @@
 					"selection": {
 						"\\.(js|css|php)$": true,
 						"\\.min\\.(js|css|php)$": false,
-						"^\\.\\/submodules($|\\/)": false
+						"^\\.\\/templates($|\\/)": false
 					},
 					"setDiffs": {
 						"/(@version\\s+)\\d+(\\.\\d+)*": "$1%VERSION%"

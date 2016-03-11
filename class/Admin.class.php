@@ -1,4 +1,16 @@
 <?php
+
+/**
+ * @file Admin class file
+ *
+ * @copyright 2016 iThoughts Informatique
+ * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
+ * @package ithoughts_advanced_code_editor
+ *
+ * @version 1.2.1
+ */
+
+
 /**
   * @copyright 2015-2016 iThoughts Informatique
   * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.fr.html GPLv2
