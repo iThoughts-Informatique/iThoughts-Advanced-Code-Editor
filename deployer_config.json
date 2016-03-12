@@ -158,49 +158,6 @@
                             }
                         ]
                     }
-                },
-                {
-                    "git": {
-                        "path": "/mnt/workdata/php/WP-Plugins/doc",
-                        "actions": [
-                            {
-                                "action": "commit",
-                                "data": {
-                                    "message": "Release version %VERSION% of iThoughts Advanced Code Editor"
-                                }
-                            },
-                            {
-                                "action": "push"
-                            }
-                        ]
-                    }
-                },
-                {
-                    "svn": {
-                        "path": "/mnt/workdata/php/WP-Plugins/svn/ithoughts_advanced_code_editor",
-                        "actions": [
-                            {
-                                "action": "add",
-                                "data": {
-                                    "path": "",
-                                    "force": true
-                                }
-                            },
-                            {
-                                "action": "cp",
-                                "data": {
-                                    "from": "trunk",
-                                    "to": "tags/%VERSION%"
-                                }
-                            },
-                            {
-                                "action": "commit",
-                                "data": {
-                                    "message": "Release version %VERSION%"
-                                }
-                            }
-                        ]
-                    }
                 }
             ]
         ],
