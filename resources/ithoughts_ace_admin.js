@@ -28,20 +28,24 @@ $d.ready(function(){
 				if(opts.language == "php"){
 					$("#template .submit").append('<p class="codecheck codecheck-php codecheck-on">CodeCheck</p>');
 					console.info("Sandboxing");
-					var submit = gei("submit");
-					$("#template").submit(function(e){
-						if(submit.getAttribute("data-waschecked") != "unchecked"){
-						} else {
-							return ithoughts_ace.sandboxPhp(opts.$textarea.val(), fileInput.value, e, submit);
-						}
-					});
+					opts.submit = gei("submit");
+					if(opts.submit){
+						$("#template").submit(function(e){
+							if(opts.submit.getAttribute("data-waschecked") != "unchecked"){
+							} else {
+								return ithoughts_ace.sandboxPhp(opts.$textarea.val(), fileInput.value, e, submit);
+							}
+						});
+					}
 				}
 				return opts;
 			},
 			postInit: function(editor, opts){
 				if(opts.language == "php"){
 					editor.on("change",function(){
-						submit.setAttribute("data-waschecked", "unchecked");
+						if(opts.submit){
+							opts.submit.setAttribute("data-waschecked", "unchecked");
+						}
 					});
 				}
 				if(opts.$container){

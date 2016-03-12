@@ -70,15 +70,28 @@ class Admin extends \ithoughts\v1_0\Singleton{
 
 		$code = "?>".stripslashes($code);
 		{
-			$regex = "/(namespace\s+[\\\\\w]+;)/";
-			$returner = "return;if(false){";
+			$regex = "/(namespace\s+[\\w\\\\]+;)/";
+			$returner = "return;if(false){ ";
 			if(preg_match($regex, $code)){
-				$code = preg_replace($regex,"$1\n".$returner,$code)."}";
+				$code = preg_replace($regex,"$1\n".$returner,$code);
+				if(strripos($code, "?>") > strripos($code, "<?php")){
+					//echo "Append PHP with namespace";
+					$code .= "<?php";
+				}
+				$code .= " }";
 			} else {
-				$code = $returner.$code."}";
+				if(strripos($code, "?>") > strripos($code, "<?php")){
+					//echo "Append PHP without namespace";
+					$code .= "<?php";
+				}
+				$code = $returner.$code." }";
 			}
 		}
 
+		/*var_dump($code);
+		echo "\n\n";*/
+		
+		
 		$regex = "/ in ".preg_quote("<b>".__FILE__, '/')."\(\d+\) : eval\(\)'d code\<\/b\>/";
 		register_shutdown_function(array(&$this, "handle_fatal"));
 		ob_start(array(&$this, "handle_fatal"));
