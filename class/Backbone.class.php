@@ -1,9 +1,10 @@
 <?php
+
 /**
  * @file Backbone class. Init options & handle public functions
  *
  * @copyright 2015-2016 iThoughts Informatique
- * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.fr.html GPLv2
+ * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
  * @package ithoughts_advanced_code_editor
  *
  * @version 1.2.1
@@ -43,7 +44,6 @@ class Backbone extends \ithoughts\v1_1_1\Backbone{
 	public function compose_ace_js_obj($opts = NULL){
 		if($opts == NULL)
 			$opts = $this->get_options();
-		var_dump($opts);
 		unset($opts["enable_shortcode"]);
 		if(!isset($opts["autocomplete"]))
 			$opts["autocomplete"] = array();

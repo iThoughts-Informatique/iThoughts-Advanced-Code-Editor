@@ -18,7 +18,7 @@ Writing code directly into your WordPress editors have never been so easy. [Ace]
 * **Checks your code to avoid submission if syntax errors are found!**
 * 34 themes to style your editor the way you'll love it
 * Automatically adapt the syntax-highlight to the language of the file
-* Automatically adjust editor size to fit your screen and give you a bigger work-area
+* Automatically adjust editor size to fSnippetsit your screen and give you a bigger work-area
 * Auto-completion for PHP, HTML, JavaScript and CSS
 * Auto-close parenthesis, brackets, HTML tags, etc etc...
 * Auto-indentation
