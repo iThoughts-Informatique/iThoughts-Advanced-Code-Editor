@@ -7,7 +7,7 @@
  * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
  * @package ithoughts_advanced_code_editor
  *
- * @version 1.2.1
+ * @version 1.2.5
  */
 
 
@@ -152,7 +152,7 @@ class Admin extends \ithoughts\v1_0\Singleton{
 			'ithoughts-ace-admin',
 			$backbone->get_base_url() . "/resources/ithoughts_ace_admin{$backbone->get_minify()}.js",
 			array('ithoughts_aliases', 'ace-editor', 'ace-autocomplete', "ithoughts-ace-comon"),
-			"1.1.0",
+			"1.2.5",
 			false
 		);
 		wp_enqueue_script('ithoughts-ace-admin');

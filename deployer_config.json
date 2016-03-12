@@ -206,12 +206,12 @@
         ],
         "checksums": {
             "./ithoughts_advanced_code_editor.php": {
-                "sha1": "d6d763e3494a5f107780e0e6ff63cb438b15506e",
-                "md5": "36b85883cb5da30057f0bb6516780ddd"
+                "sha1": "c70b10473e80fd4545714e14148ffebf1748e7fb",
+                "md5": "744c0d56ef57f81d2d548ae459472d98"
             },
             "./class/Admin.class.php": {
-                "sha1": "fdbeb6ee11201710d0107fde9f69034b60bbffaf",
-                "md5": "1a9f932728dfebfb82cbd4ed9b0b20b7"
+                "sha1": "95c1493d445550852ce23c0dc641e9b33d4e125d",
+                "md5": "5dfb75540359a56cd42219bcd2adb5b0"
             },
             "./class/Backbone.class.php": {
                 "sha1": "8753311af716128fcb148b040781eef0ffd8bd8f",
@@ -230,8 +230,8 @@
                 "md5": "09f8c7d91791a972180f18bd7f92752d"
             },
             "./resources/ithoughts_ace_admin.js": {
-                "sha1": "7e10089062674fb98b05f46d80100c06cd2f4552",
-                "md5": "703f2c7caaaa8a221e96e442f8975af7"
+                "sha1": "9a6601fe4a4a53528121f3fd08f53c8a109adf9b",
+                "md5": "ef443598ee1c2dae475bf150cae20de1"
             },
             "./resources/ithoughts_ace_options.js": {
                 "sha1": "e828d0b74597d279270d232a122900507fbbf3ea",

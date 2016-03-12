@@ -5,7 +5,7 @@
  * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
  * @package ithoughts_advanced_code_editor
  *
- * @version 1.2.1
+ * @version 1.2.5
  */
 
 $d.ready(function(){

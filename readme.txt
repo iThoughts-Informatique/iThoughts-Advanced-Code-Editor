@@ -4,7 +4,7 @@ Plugin URL: http://www.gerkindevelopment.net/en/portfolio/ithoughts-advanced-cod
 Tags: editor, editors, tool, tools, ace, ace editor, ide, help, programming, code, development, syntax, highlighting, syntax highlighting, check
 Requires at least: 3.3
 Tested up to: 4.4
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 License: GPLv2 or later
 
 Integrate the Code Editor Ace into your WordPress editors to help you write efficient code! Now provides code checking for your PHP files!
@@ -50,6 +50,10 @@ This section is empty for now.
 
 == Changelog ==
 
+= 1.2.5 =
+* FIX CodeChecker handles correctly files ending with HTML template (last `?>` after last `<?php`)
+* FIX Admin JS don't trigger errors anymore when there's no submit button.
+
 = 1.2.4 =
 * FIX clean forgotten var_dump
 
@@ -76,6 +80,9 @@ This section is empty for now.
 
 
 == Upgrade Notice ==
+
+= 1.2.5 =
+Improve behavior on PHP files ending with HTML template
 
 = 1.2.4 =
 
