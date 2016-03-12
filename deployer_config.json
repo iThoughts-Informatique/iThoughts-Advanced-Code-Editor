@@ -221,13 +221,13 @@
                 "sha1": "f940c48ff6e1bf1b8781e3a183ed580d8005b324",
                 "md5": "b24ceb90e691d5eb99f865e7006dd317"
             },
-            "./resources/ithoughts_ace-comon.js": {
-                "md5": "5bdfd8b7fd3f47a48fd82c95a5a24b18",
-                "sha1": "990dad378bd5f194aa80b974e2f1a58c35872de4"
-            },
             "./resources/ithoughts_ace.css": {
                 "sha1": "c94f4f8820ed126cef3b15881265b89ab4a44d98",
                 "md5": "09f8c7d91791a972180f18bd7f92752d"
+            },
+            "./resources/ithoughts_ace-comon.js": {
+                "md5": "5bdfd8b7fd3f47a48fd82c95a5a24b18",
+                "sha1": "990dad378bd5f194aa80b974e2f1a58c35872de4"
             },
             "./resources/ithoughts_ace_admin.js": {
                 "sha1": "9a6601fe4a4a53528121f3fd08f53c8a109adf9b",
