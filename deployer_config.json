@@ -209,13 +209,13 @@
                 "md5": "32684ad4cd93451ea4f0e48186014476",
                 "sha1": "e91ead80f926f5ed4098edaa5f1796474fdfe3ce"
             },
-            "./class/Backbone.class.php": {
-                "sha1": "8753311af716128fcb148b040781eef0ffd8bd8f",
-                "md5": "aa93f7ecbdea8034a2e7bc8396794faf"
-            },
             "./class/Admin.class.php": {
                 "sha1": "b6010032485d3690c7b4bb27aa8c310202cf8be9",
                 "md5": "92ce9ff918dde7a7e3851c67ec89cf0e"
+            },
+            "./class/Backbone.class.php": {
+                "sha1": "8753311af716128fcb148b040781eef0ffd8bd8f",
+                "md5": "aa93f7ecbdea8034a2e7bc8396794faf"
             },
             "./class/checkSyntax.php": {
                 "sha1": "f940c48ff6e1bf1b8781e3a183ed580d8005b324",
