@@ -189,7 +189,7 @@
                             {
                                 "action": "cp",
                                 "data": {
-                                    "from": "trunk/*",
+                                    "from": "trunk/",
                                     "to": "tags/%VERSION%"
                                 }
                             },
