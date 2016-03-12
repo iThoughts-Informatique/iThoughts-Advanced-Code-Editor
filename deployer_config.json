@@ -206,12 +206,12 @@
         ],
         "checksums": {
             "./ithoughts_advanced_code_editor.php": {
-                "sha1": "c70b10473e80fd4545714e14148ffebf1748e7fb",
-                "md5": "744c0d56ef57f81d2d548ae459472d98"
+                "md5": "32684ad4cd93451ea4f0e48186014476",
+                "sha1": "e91ead80f926f5ed4098edaa5f1796474fdfe3ce"
             },
             "./class/Admin.class.php": {
-                "sha1": "95c1493d445550852ce23c0dc641e9b33d4e125d",
-                "md5": "5dfb75540359a56cd42219bcd2adb5b0"
+                "sha1": "b6010032485d3690c7b4bb27aa8c310202cf8be9",
+                "md5": "92ce9ff918dde7a7e3851c67ec89cf0e"
             },
             "./class/Backbone.class.php": {
                 "sha1": "8753311af716128fcb148b040781eef0ffd8bd8f",
