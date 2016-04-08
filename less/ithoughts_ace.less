@@ -119,3 +119,74 @@ min-height: auto;
 		margin: 0;
 	}
 }
+
+#ithoughts_ace-loader {
+	display: inline-block;
+    width: 45px;
+    height: 45px;
+    position: relative;
+    vertical-align: middle;
+    background-color: #074659;
+    border-radius: 100%;
+	
+	&:after, &:before{
+		content: '';
+		position: absolute;
+		top: 10%;
+		bottom: 10%;
+		left: 10%;
+		right: 10%;
+		border-radius: 100%;
+		border: 3px solid transparent;
+		border-top-color: #ffffff;
+		opacity: 0.7;
+	}
+	&:after {
+		-webkit-animation: spin 2s linear infinite;
+		animation: spin 2s linear infinite;
+	}
+	&:before {
+		-webkit-animation: spinInvert 2s linear infinite;
+		animation: spinInvert 2s linear infinite;
+	}
+}
+
+
+
+
+@keyframes spin{
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes spin{
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes spinInvert{
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+@-webkit-keyframes spinInvert{
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(-360deg);
+    }
+}

@@ -1,13 +1,3 @@
-/**
- * @file Stylesheet of iThoughts Advanced Code Editor
- *
- * @copyright 2016 iThoughts Informatique
- * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
- * @package ithoughts_advanced_code_editor
- *
- * @version 1.2.1
- */
-
 /*body#tinymce{
 pre.ace_editor{
 &:before{
@@ -104,4 +94,66 @@ min-height: auto;
 #checkresult pre {
   white-space: normal;
   margin: 0;
+}
+#ithoughts_ace-loader {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  position: relative;
+  vertical-align: middle;
+  background-color: #074659;
+  border-radius: 100%;
+}
+#ithoughts_ace-loader:after,
+#ithoughts_ace-loader:before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+  border-radius: 100%;
+  border: 3px solid transparent;
+  border-top-color: #ffffff;
+  opacity: 0.7;
+}
+#ithoughts_ace-loader:after {
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+#ithoughts_ace-loader:before {
+  -webkit-animation: spinInvert 2s linear infinite;
+  animation: spinInvert 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spinInvert {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@-webkit-keyframes spinInvert {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
 }

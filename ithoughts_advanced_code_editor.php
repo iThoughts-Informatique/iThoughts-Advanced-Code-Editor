@@ -15,7 +15,7 @@
 Plugin Name:	iThoughts Advanced Code Editor
 Plugin URI:		http://www.gerkindevelopment.net/en/portfolio/ithoughts-advanced-code-editor/
 Description:	Integrate the Code Editor Ace into your WordPress editors to help you write efficient code!
-Version: 1.2.5
+Version:		1.2.5
 Author:			Gerkin
 License:		GPLv2 or later
 Text Domain:	ithoughts-advanced-code-editor

@@ -5,6 +5,9 @@
         "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/resources/ithoughts_ace_options.js",
         "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min-noconflict/ext-split.js",
         "mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min-noconflict/fold",
-        "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min-noconflict/mode-gitignore.js"
+        "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min-noconflict/mode-gitignore.js",
+        "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min/worker-xquery.js",
+        "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min/mode-logiql.js",
+        "mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min/edit_session/bracket_match"
     ]
 }

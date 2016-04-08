@@ -33,7 +33,7 @@ $d.ready(function(){
 						$("#template").submit(function(e){
 							if(opts.submit.getAttribute("data-waschecked") != "unchecked"){
 							} else {
-								return ithoughts_ace.sandboxPhp(opts.$textarea.val(), fileInput.value, e, submit);
+								return ithoughts_ace.sandboxPhp(opts, fileInput.value, e, submit);
 							}
 						});
 					}
@@ -160,13 +160,20 @@ $d.ready(function(){
 				ithoughts_ace.setAceOpts(editor, opts.language, opts);
 				opts.editorContainer = editor.container;
 				opts.$editorContainer = $(opts.editorContainer);
+				opts.editor = editor;
+				var params = decodeParameters(location.search.substring(1));
+				if(typeof params["scrollto"] != "undefined" && params["scrollto"] != null){
+					editor.scrollToLine(params["scrollto"]);
+				}
 
 				var updateEditorPosition = null;
 				if(typeof typeopts["postInit"] != "undefined" && typeopts["postInit"] != null && typeopts["postInit"].constructor.name == "Function"){
 					updateEditorPosition = typeopts["postInit"](editor, opts);
 				}
+				var scrollto = $("#scrollto");
 				if(opts.$textarea && opts.$textarea.length > 0){
 					editor.getSession().on('change', function () {
+						scrollto.val(editor.getSelectionRange().start.row);
 						opts.$textarea.val(editor.getSession().getValue());
 					});
 				}
@@ -178,9 +185,20 @@ $d.ready(function(){
 	}
 });
 
-ithoughts_ace.sandboxPhp = function(content, file, event, submitButton, form){
-	console.log(form);
+if(typeof ithoughts_ace == "undefined")
+	ithoughts_ace = {};
+
+ithoughts_ace.sandboxPhp = function(editorObject, file, event, submitButton, form){
+	console.log(form,editorObject);
+	function toggleLoadingMarker(displayed){
+		$("#ithoughts_ace-loader").remove();
+		if(displayed === true){
+			$(".submit").append($.parseHTML('<div id="ithoughts_ace-loader"></div>'));
+		}
+	}
+
 	function setResultDisplay(data){
+		toggleLoadingMarker(false);
 		try{
 			if(data && data.constructor.name == "String")
 				data = JSON.parse(data);
@@ -202,8 +220,11 @@ ithoughts_ace.sandboxPhp = function(content, file, event, submitButton, form){
 		}
 	}
 
-	$.post(ithoughts_ace.ajax, {
-		"code": content,
+	toggleLoadingMarker(true);
+
+
+	$.post(ithoughts_ace.ajax + "?" + $.param(params), {
+		"code": editorObject.$textarea.val(),
 		"file": file,
 		"action": "ithoughts_ace_check_syntax"
 	}).success(function(data){
@@ -213,4 +234,8 @@ ithoughts_ace.sandboxPhp = function(content, file, event, submitButton, form){
 	});
 	event.preventDefault();
 	return false;
+}
+
+function decodeParameters(querystring){
+	return JSON.parse('{"' + decodeURI(querystring).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
 }
