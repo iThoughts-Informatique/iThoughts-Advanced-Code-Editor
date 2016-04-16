@@ -14,6 +14,7 @@ $d.ready(function(){
 			target:"#template #newcontent",
 			container:"#template",
 			preInit: function(opts){
+                $("#scrollto").attr("id","_scrollto");
 				opts.clone = opts.$elem[0].cloneNode();
 				opts.$textarea = $(opts.clone);
 				opts.$textarea.css({display:"none"});
@@ -158,7 +159,7 @@ $d.ready(function(){
 
 				var editor = ace.edit(opts.$elem[0].id);
 				ithoughts_ace.setAceOpts(editor, opts.language, opts);
-				opts.editorContainer = editor.container;
+				opts.editorContainer = editor.container; 
 				opts.$editorContainer = $(opts.editorContainer);
 				opts.editor = editor;
 				var params = decodeParameters(location.search.substring(1));
@@ -170,7 +171,7 @@ $d.ready(function(){
 				if(typeof typeopts["postInit"] != "undefined" && typeopts["postInit"] != null && typeopts["postInit"].constructor.name == "Function"){
 					updateEditorPosition = typeopts["postInit"](editor, opts);
 				}
-				var scrollto = $("#scrollto");
+				var scrollto = $('[name="scrollto"]');
 				if(opts.$textarea && opts.$textarea.length > 0){
 					editor.getSession().on('change', function () {
 						scrollto.val(editor.getSelectionRange().start.row);
@@ -237,5 +238,11 @@ ithoughts_ace.sandboxPhp = function(editorObject, file, event, submitButton, for
 }
 
 function decodeParameters(querystring){
-	return JSON.parse('{"' + decodeURI(querystring).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
+    var qs = ('{"' + decodeURI(querystring).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}').replace(/([\{,]"[^"]*?"(?=[,\}]))/g, '$1:true');
+    try{
+        return JSON.parse(qs);
+    } catch(e){
+        console.warn("Could not parse query string:",qs,e);
+        return {};
+    }
 }

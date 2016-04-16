@@ -8,6 +8,15 @@
         "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min-noconflict/mode-gitignore.js",
         "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min/worker-xquery.js",
         "/mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min/mode-logiql.js",
-        "mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min/edit_session/bracket_match"
+        "mnt/workdata/php/WP-Plugins/git/ithoughts_advanced_code_editor/submodules/ace-builds/src-min/edit_session/bracket_match",
+        "/mnt/mutualized/work/php/wp-plugins/git/iThoughts-Advanced-Code-Editor/submodules/ace-builds/src-min-noconflict/ext-statusbar.js",
+        "/mnt/mutualized/work/php/wp-plugins/git/iThoughts-Advanced-Code-Editor/submodules/ace-builds/src-min-noconflict/mode-wollok.js",
+        "mnt/mutualized/work/php/wp-plugins/git/iThoughts-Advanced-Code-Editor/submodules/ace-builds/src-min-noconflict/nix_highlight_rules",
+        "mnt/mutualized/work/php/wp-plugins/git/iThoughts-Advanced-Code-Editor/submodules/ace-builds/src-min-noconflict/ada_highlight_rules",
+        "/mnt/mutualized/work/php/wp-plugins/git/iThoughts-Advanced-Code-Editor/submodules/ace-builds/src-min-noconflict/mode-assembly_x86.js",
+        "mnt/mutualized/work/php/wp-plugins/git/iThoughts-Advanced-Code-Editor/submodules/ace-builds/src-min-noconflict/c_cpp_highlight_rules",
+        "/mnt/mutualized/work/php/wp-plugins/git/iThoughts-Advanced-Code-Editor/submodules/ace-builds/src-min-noconflict/mode-haskell.js",
+        "/mnt/mutualized/work/php/wp-plugins/git/iThoughts-Advanced-Code-Editor/submodules/ace-builds/src-min-noconflict/mode-nsis.js",
+        "/mnt/mutualized/work/php/wp-plugins/git/iThoughts-Advanced-Code-Editor/submodules/ace-builds/src-min-noconflict/worker-xquery.js"
     ]
 }
