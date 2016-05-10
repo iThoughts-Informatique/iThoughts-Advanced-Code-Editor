@@ -2,7 +2,7 @@
 Contributors: Gerkin
 Plugin URL: http://www.gerkindevelopment.net/en/portfolio/ithoughts-advanced-code-editor/
 Tags: editor, editors, tool, tools, ace, ace editor, ide, help, programming, code, development, syntax, highlighting, syntax highlighting, check
-Stable tag: 1.2.7
+Stable tag: 1.2.8
 Requires at least: 3.3
 Tested up to: 4.4
 License: GPLv2 or later
@@ -50,6 +50,9 @@ This section is empty for now.
 
 == Changelog ==
 
+= undefined =
+* FIX Sometimes cleared the file content if query string empty
+
 = 1.2.7 =
 * FIX Add missing support of scrollto parameter in theme & plugin editors
 
@@ -83,6 +86,9 @@ This section is empty for now.
 
 
 == Upgrade Notice ==
+
+= undefined =
+Correction of a critical fail
 
 = 1.2.5 =
 Improve behavior on PHP files ending with HTML template

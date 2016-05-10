@@ -541,7 +541,20 @@
 
 																	<td class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;" valign="top">
 
-																		<h1 class="null" style="text-align: center;">A <?php echo $type; ?> was spotted in codecheck</h1>
+																		<h1 class="null" style="text-align: center;">A <?php
+
+/**
+ * @file Template to send a mail about a wrong check
+ *
+ * @author Gerkin
+ * @copyright 2016 GerkinDevelopment
+ * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
+ * @package ithoughts_advanced_code_editor
+ *
+ * @version 1.2.8
+ */
+
+ echo $type; ?> was spotted in codecheck</h1>
 
 																	</td>
 																	</tr>

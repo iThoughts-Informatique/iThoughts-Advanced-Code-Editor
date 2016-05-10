@@ -4,7 +4,20 @@
 			<div class="icon32" id="icon-options-general">
 				<br>
 			</div>
-			<h2><?php _e('Report', 'ithoughts-advanced-code-editor' ); ?></h2>
+			<h2><?php
+
+/**
+ * @file Form to make a false positiive/negative report
+ *
+ * @author Gerkin
+ * @copyright 2016 GerkinDevelopment
+ * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
+ * @package ithoughts_advanced_code_editor
+ *
+ * @version 1.2.8
+ */
+
+ _e('Report', 'ithoughts-advanced-code-editor' ); ?></h2>
 			<div id="dashboard-widgets-wrap">
 				<div id="dashboard-widgets">
 					<div id="normal-sortables" class=""><!--Old removed classes: "meta-box-sortables ui-sortable"-->

@@ -1,11 +1,12 @@
 /**
  * @file Client JS file that will be required by every functions of plugin
  *
+ * @author Gerkin
  * @copyright 2016 iThoughts Informatique
  * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
  * @package ithoughts_advanced_code_editor
  *
- * @version 1.2.1
+ * @version 1.2.8
  */
 
 window.ace_editors = [];

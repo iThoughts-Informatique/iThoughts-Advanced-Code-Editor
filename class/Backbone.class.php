@@ -3,11 +3,12 @@
 /**
  * @file Backbone class. Init options & handle public functions
  *
+ * @author Gerkin
  * @copyright 2015-2016 iThoughts Informatique
  * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
  * @package ithoughts_advanced_code_editor
  *
- * @version 1.2.4
+ * @version 1.2.8
  */
 
 namespace ithoughts\ace;
