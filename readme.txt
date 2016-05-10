@@ -50,7 +50,7 @@ This section is empty for now.
 
 == Changelog ==
 
-= undefined =
+= 1.2.8 =
 * FIX Sometimes cleared the file content if query string empty
 
 = 1.2.7 =
@@ -87,7 +87,7 @@ This section is empty for now.
 
 == Upgrade Notice ==
 
-= undefined =
+= 1.2.8 =
 Correction of a critical fail
 
 = 1.2.5 =
