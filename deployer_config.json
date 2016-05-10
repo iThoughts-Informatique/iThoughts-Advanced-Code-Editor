@@ -300,7 +300,7 @@
                         "actions": [
                             {
                                 "action": "exec",
-                                "data":{
+                                "data": {
                                     "command": "wp2md convert < readme.txt > README.md"
                                 }
                             },
@@ -468,6 +468,59 @@
                     }
                 ]
             }
+        },
+        "checksums": {
+            "./ithoughts_advanced_code_editor.php": {
+                "sha1": "f643cd40892dfc365bb8383fa1263f2d05e442e7",
+                "md5": "235972409a339693f93066bdf1b83af3"
+            },
+            "./class/Admin.class.php": {
+                "md5": "611a35f2e020a937d4b11db4d8163122",
+                "sha1": "14a7eb99530c4e878624b09feda8f4f489379a49"
+            },
+            "./class/Backbone.class.php": {
+                "sha1": "42ac32bc794d2a79458a1076486c00e3213d2534",
+                "md5": "acbb24b36f2b39ef7b0b3bb02ad609c9"
+            },
+            "./class/checkSyntax.php": {
+                "sha1": "072e3655791efd0e7746526cbcda364a6b4c518c",
+                "md5": "0d96ad43dccbe60f3cbb58315cbc1fa7"
+            },
+            "./templates/mail_report.php": {
+                "sha1": "7d67ae1c4ddc9b9f10ee43fe881107faf82fbd6c",
+                "md5": "59f5731e66967429de412196356e80be"
+            },
+            "./templates/options.php": {
+                "sha1": "89856a9e1516b282aaefd87e767eba48889d5204",
+                "md5": "55393ae3b248506b4bd4b9226deb1085"
+            },
+            "./templates/report.php": {
+                "sha1": "b01d5827d358853bfb1922a2d4561e65d2114b10",
+                "md5": "77f6e96d007daacf12bee9d7d2b5ebcd"
+            },
+            "./resources/ithoughts_ace-comon.js": {
+                "sha1": "4312facf0bd6970abf3a4f49c375389ba2d96100",
+                "md5": "d487ea19d3bf07f3b4582f9c0c1142ab"
+            },
+            "./resources/ithoughts_ace.css": {
+                "sha1": "da7aba91e218a7f66d838d8bf5f3e22f3f4bbe51",
+                "md5": "7858d01e6cc9fef8c510b3721aa311d9"
+            },
+            "./resources/ithoughts_ace.min.css": {
+                "sha1": "b178f20c318e24eb67a7fc2d6b37ce5325644f0c",
+                "md5": "654fcb80e21776b9c1666d215d5a9585"
+            },
+            "./resources/ithoughts_ace_admin.js": {
+                "sha1": "03a5eb9767bc3d51532c9ec30306ab47969c75c1",
+                "md5": "0eca57a93d2d7afda3180bf45f93cada"
+            },
+            "./resources/ithoughts_ace_options.js": {
+                "sha1": "cd51cc498e607ca042fcbb8e522a1f9c379c1b58",
+                "md5": "d901a04e2385e3ee5ba562fb3c59fb92"
+            }
+        },
+        "versions": {
+            "1.2": "http://documentation.gerkindevelopment.net/wp-plugins/ithoughts-advanced-code-editor/1.2"
         }
     },
     "dirty": false
