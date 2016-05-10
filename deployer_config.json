@@ -486,18 +486,6 @@
                 "sha1": "072e3655791efd0e7746526cbcda364a6b4c518c",
                 "md5": "0d96ad43dccbe60f3cbb58315cbc1fa7"
             },
-            "./templates/mail_report.php": {
-                "sha1": "7d67ae1c4ddc9b9f10ee43fe881107faf82fbd6c",
-                "md5": "59f5731e66967429de412196356e80be"
-            },
-            "./templates/options.php": {
-                "sha1": "89856a9e1516b282aaefd87e767eba48889d5204",
-                "md5": "55393ae3b248506b4bd4b9226deb1085"
-            },
-            "./templates/report.php": {
-                "sha1": "b01d5827d358853bfb1922a2d4561e65d2114b10",
-                "md5": "77f6e96d007daacf12bee9d7d2b5ebcd"
-            },
             "./resources/ithoughts_ace-comon.js": {
                 "sha1": "4312facf0bd6970abf3a4f49c375389ba2d96100",
                 "md5": "d487ea19d3bf07f3b4582f9c0c1142ab"
@@ -517,6 +505,18 @@
             "./resources/ithoughts_ace_options.js": {
                 "sha1": "cd51cc498e607ca042fcbb8e522a1f9c379c1b58",
                 "md5": "d901a04e2385e3ee5ba562fb3c59fb92"
+            },
+            "./templates/mail_report.php": {
+                "sha1": "7d67ae1c4ddc9b9f10ee43fe881107faf82fbd6c",
+                "md5": "59f5731e66967429de412196356e80be"
+            },
+            "./templates/options.php": {
+                "sha1": "89856a9e1516b282aaefd87e767eba48889d5204",
+                "md5": "55393ae3b248506b4bd4b9226deb1085"
+            },
+            "./templates/report.php": {
+                "sha1": "b01d5827d358853bfb1922a2d4561e65d2114b10",
+                "md5": "77f6e96d007daacf12bee9d7d2b5ebcd"
             }
         },
         "versions": {
