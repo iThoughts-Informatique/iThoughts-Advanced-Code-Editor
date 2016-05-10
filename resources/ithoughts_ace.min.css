@@ -1,9 +1,10 @@
-/*body#tinymce{
-pre.ace_editor{
-&:before{
-content: attr(data-code);
-}
-min-height: auto;
-}
-}*/
+/**
+ * @file Main stylesheet
+ *
+ * @copyright 2016 iThoughts Informatique
+ * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
+ * @package ithoughts_advanced_code_editor
+ *
+ * @version 1.2.5
+ */
 .codecheck{width:auto!important;margin:5px 10px;display:none;color:#fff;border-radius:5px;padding:5px 10px;display:inline-block;border:1px solid transparent}.codecheck.codecheck-php:after{content:"{PHP}";margin-left:5px}.codecheck.codecheck-on{background:#074659 none repeat scroll 0% 0%;border-color:#074659;box-shadow:1px 1px 5px #666}.ace_editor{min-height:100px}.ithoughts_ace-postcontent{margin:67px 0 0}#template div{margin-right:0!important}#template .ace_editor{min-height:100px}#template .submit{margin-bottom:10px;margin-top:0;position:relative;z-index:1}#template .submit [data-waschecked="checked-invalid"]{border-color:#ffb900;border-width:2.5px;box-shadow:0 0 5px #ffb900;color:#555;background:#f7f7f7;display:inline-block;text-decoration:none;font-size:13px;line-height:26px;height:28px;margin:0;padding:0 10px 1px;cursor:pointer;border-style:solid;-webkit-appearance:none;border-radius:3px;white-space:nowrap;box-sizing:border-box;text-shadow:none}#ace_opts_preview{min-width:300px;position:relative}#ace_opts_preview .ace_editor{position:absolute;top:0;bottom:0;width:100%}#checkresult{display:inline-block}#checkresult form{display:inline-block;margin:5px 0 5px 15px;vertical-align:baseline}#checkresult form .button.button-secondary{vertical-align:baseline}#checkresult form .button.button-secondary .dashicons{vertical-align:text-top}#checkresult pre{white-space:normal;margin:0}#ithoughts_ace-loader{display:inline-block;width:45px;height:45px;position:relative;vertical-align:middle;background-color:#074659;border-radius:100%}#ithoughts_ace-loader:after,#ithoughts_ace-loader:before{content:'';position:absolute;top:10%;bottom:10%;left:10%;right:10%;border-radius:100%;border:3px solid transparent;border-top-color:#fff;opacity:0.7}#ithoughts_ace-loader:after{-webkit-animation:spin 2s linear infinite;animation:spin 2s linear infinite}#ithoughts_ace-loader:before{-webkit-animation:spinInvert 2s linear infinite;animation:spinInvert 2s linear infinite}@keyframes spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg)}100%{-webkit-transform:rotate(360deg)}}@keyframes spinInvert{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}100%{-webkit-transform:rotate(-360deg);transform:rotate(-360deg)}}@-webkit-keyframes spinInvert{0%{-webkit-transform:rotate(0deg)}100%{-webkit-transform:rotate(-360deg)}}
