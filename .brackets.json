@@ -17,6 +17,7 @@
         "mnt/mutualized/work/php/wp-plugins/git/iThoughts-Advanced-Code-Editor/submodules/ace-builds/src-min-noconflict/c_cpp_highlight_rules",
         "/mnt/mutualized/work/php/wp-plugins/git/iThoughts-Advanced-Code-Editor/submodules/ace-builds/src-min-noconflict/mode-haskell.js",
         "/mnt/mutualized/work/php/wp-plugins/git/iThoughts-Advanced-Code-Editor/submodules/ace-builds/src-min-noconflict/mode-nsis.js",
-        "/mnt/mutualized/work/php/wp-plugins/git/iThoughts-Advanced-Code-Editor/submodules/ace-builds/src-min-noconflict/worker-xquery.js"
+        "/mnt/mutualized/work/php/wp-plugins/git/iThoughts-Advanced-Code-Editor/submodules/ace-builds/src-min-noconflict/worker-xquery.js",
+        "/mnt/mutualized/work/php/wp-plugins/git/ithoughts-advanced-code-editor/submodules/ace-builds/src-min-noconflict/ext-statusbar.js"
     ]
 }

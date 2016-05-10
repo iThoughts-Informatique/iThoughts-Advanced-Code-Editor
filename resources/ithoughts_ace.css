@@ -59,11 +59,8 @@ min-height: auto;
   cursor: pointer;
   border-style: solid;
   -webkit-appearance: none;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   white-space: nowrap;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   text-shadow: none;
 }
@@ -127,10 +124,12 @@ min-height: auto;
 }
 @keyframes spin {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 @-webkit-keyframes spin {
@@ -143,10 +142,12 @@ min-height: auto;
 }
 @keyframes spinInvert {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
   }
 }
 @-webkit-keyframes spinInvert {
