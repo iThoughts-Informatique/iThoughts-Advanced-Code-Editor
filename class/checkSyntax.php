@@ -8,12 +8,15 @@
  * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
  * @package ithoughts_advanced_code_editor
  *
- * @version 1.2.8
+ * @version 1.2.10
  */
 
 
-
 namespace ithoughts\ace;
+
+if ( ! defined( 'ABSPATH' ) ) { 
+    exit; // Exit if accessed directly
+}
 
 function checkSyntax($content, $file){
 	

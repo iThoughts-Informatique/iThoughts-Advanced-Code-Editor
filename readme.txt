@@ -2,10 +2,10 @@
 Contributors: Gerkin
 Plugin URL: http://www.gerkindevelopment.net/en/portfolio/ithoughts-advanced-code-editor/
 Tags: editor, editors, tool, tools, ace, ace editor, ide, help, programming, code, development, syntax, highlighting, syntax highlighting, check
-Stable tag: 1.2.8
+Stable tag: 1.2.10
 Requires at least: 3.3
-Tested up to: 4.4
-License: GPLv2 or later
+Tested up to: 4.5
+License: GPL3.0
 
 Integrate the Code Editor Ace into your WordPress editors to help you write efficient code! Now provides code checking for your PHP files!
 

@@ -1,11 +1,4 @@
-<div class="wrap">
-	<div id="ithoughts-advanced-code-editor-options" class="meta-box meta-box-50 metabox-holder">
-		<div class="meta-box-inside admin-help">
-			<div class="icon32" id="icon-options-general">
-				<br>
-			</div>
-			<h2><?php
-
+<?php
 /**
  * @file Template file for options editing
  *
@@ -14,10 +7,16 @@
  * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
  * @package ithoughts_advanced_code_editor
  *
- * @version 1.2.8
+ * @version 1.2.10
  */
-
- _e('Options', 'ithoughts-advanced-code-editor' ); ?></h2>
+?>
+<div class="wrap">
+	<div id="ithoughts-advanced-code-editor-options" class="meta-box meta-box-50 metabox-holder">
+		<div class="meta-box-inside admin-help">
+			<div class="icon32" id="icon-options-general">
+				<br>
+			</div>
+			<h2><?php _e('Options', 'ithoughts-advanced-code-editor' ); ?></h2>
 			<div id="dashboard-widgets-wrap">
 				<div id="dashboard-widgets">
 					<div id="normal-sortables" class=""><!--Old removed classes: "meta-box-sortables ui-sortable"-->
@@ -62,12 +61,12 @@ div{
 													<label for="autocompletion"><?php _e('Autocompletion', 'ithoughts-advanced-code-editor' ); ?>:</label>
 												</th>
 												<td>
-													<?php echo $optionsInputs["autocompletion"]["autocompletion_ondemand"]; ?><label for="autocompletion_ondemand"><?php _e('Autocomplete on demande <em>(Press ctrl+space)</em>', 'ithoughts-advanced-code-editor' ); ?></label>
+													<?php echo $optionsInputs["autocompletion"]["autocompletion_ondemand"]; ?><label for="autocompletion_autocompletion_ondemand"><?php _e('Autocomplete on demande <em>(Press ctrl+space)</em>', 'ithoughts-advanced-code-editor' ); ?></label>
 												</td>
 											</tr>
 											<tr>
 												<td>
-													<?php echo $optionsInputs["autocompletion"]["autocompletion_live"]; ?><label for="autocompletion_live"><?php _e('Live autocomplete <em>(suggest as you type)</em>', 'ithoughts-advanced-code-editor' ); ?></label>
+													<?php echo $optionsInputs["autocompletion"]["autocompletion_live"]; ?><label for="autocompletion_autocompletion_live"><?php _e('Live autocomplete <em>(suggest as you type)</em>', 'ithoughts-advanced-code-editor' ); ?></label>
 												</td>
 											</tr>
 											<tr>

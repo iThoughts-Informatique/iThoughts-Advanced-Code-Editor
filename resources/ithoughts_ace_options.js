@@ -6,26 +6,31 @@
  * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
  * @package ithoughts_advanced_code_editor
  *
- * @version 1.2.8
+ * @version 1.2.10
  */
 
-$d.ready(function(){
-	var editor = ace.edit("test_ace_editor");
-	ithoughts_ace.setAceOpts(editor, "php",{});
-	$("#autocompletion_autocompletion_ondemand, #autocompletion_autocompletion_live, #theme").change(updatepreview).change();
-	$('#theme option').mouseover(updatepreview);
+(function(ithoughts){
+	'use strict';
 
-	function updatepreview(){
-		console.log(this.value);
-		if(this.id == "theme")
-			ithoughts_ace.update_editor_style(editor, this.value);
-		else if(this.id == "autocompletion_autocompletion_ondemand"){
-			ithoughts_ace.autocompletion.autocompletion_ondemand = this.checked;
-			ithoughts_ace.setAceOpts(editor, "php");
+	var i_a = ithoughts_ace;
+
+	ithoughts.$d.ready(function(){
+		var editor = ace.edit("test_ace_editor");
+		i_a.setAceOpts(editor, "php",{});
+		ithoughts.$("#autocompletion_autocompletion_ondemand, #autocompletion_autocompletion_live, #theme").change(updatepreview).change();
+		ithoughts.$('#theme option').mouseover(updatepreview);
+
+		function updatepreview(){
+			if(this.id == "theme")
+				i_a.update_editor_style(editor, this.value);
+			else if(this.id == "autocompletion_autocompletion_ondemand"){
+				i_a.autocompletion.autocompletion_ondemand = this.checked;
+				i_a.setAceOpts(editor, "php");
+			}
+			else if(this.id == "autocompletion_autocompletion_live"){
+				i_a.autocompletion.autocompletion_live = this.checked;
+				i_a.setAceOpts(editor, "php");
+			}
 		}
-		else if(this.id == "autocompletion_autocompletion_live"){
-			ithoughts_ace.autocompletion.autocompletion_live = this.checked;
-			ithoughts_ace.setAceOpts(editor, "php");
-		}
-	}
-});
+	});
+})(Ithoughts.v3);

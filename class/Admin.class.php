@@ -4,21 +4,19 @@
  * @file Admin class file
  *
  * @author Gerkin
- * @copyright 2016 iThoughts Informatique
+ * @copyright 2015-2016 iThoughts Informatique
  * @license https://raw.githubusercontent.com/iThoughts-Informatique/iThoughts-Advanced-Code-Editor/master/LICENSE GPL3.0
  * @package ithoughts_advanced_code_editor
  *
- * @version 1.2.8
+ * @version 1.2.10
  */
 
-
-/**
-  * @copyright 2015-2016 iThoughts Informatique
-  * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.fr.html GPLv2
-  */
-
 namespace ithoughts\ace;
+use \ithoughts\v1_2\Toolbox as Toolbox;
 
+if ( ! defined( 'ABSPATH' ) ) { 
+    exit; // Exit if accessed directly
+}
 
 class Admin extends \ithoughts\v1_0\Singleton{
 
@@ -152,15 +150,15 @@ class Admin extends \ithoughts\v1_0\Singleton{
 		wp_register_script(
 			'ithoughts-ace-admin',
 			$backbone->get_base_url() . "/resources/ithoughts_ace_admin{$backbone->get_minify()}.js",
-			array('ithoughts_aliases', 'ace-editor', 'ace-autocomplete', "ithoughts-ace-comon"),
-			"1.2.5",
+			array('ithoughts-core-v3', 'ace-editor', 'ace-autocomplete', "ithoughts-ace-comon"),
+			"1.2.8",
 			false
 		);
 		wp_enqueue_script('ithoughts-ace-admin');
 		wp_register_script(
 			'ithoughts-ace-options',
 			$backbone->get_base_url() . "/resources/ithoughts_ace_options{$backbone->get_minify()}.js",
-			array('ithoughts_aliases', 'ace-editor', 'ace-autocomplete', 'ithoughts-simple-ajax', "ithoughts-ace-comon"),
+			array('ithoughts-core-v3', 'ace-editor', 'ace-autocomplete', 'ithoughts-simple-ajax-v3', "ithoughts-ace-comon"),
 			"1.1.0"
 		);
 		wp_enqueue_style('ithoughts-ace');
@@ -207,7 +205,7 @@ class Admin extends \ithoughts\v1_0\Singleton{
 		wp_enqueue_script('ithoughts-ace-options');
 
 		$optionsInputs = array(
-			"enable_shortcode"	=> \ithoughts\v1_1\Toolbox::generate_input_check(
+			"enable_shortcode"	=> Toolbox::generate_input_check(
 				"enable_shortcode",
 				array(
 					"radio" => false,
@@ -221,7 +219,7 @@ class Admin extends \ithoughts\v1_0\Singleton{
 					)
 				)
 			),
-			"theme"				=> \ithoughts\v1_1\Toolbox::generate_input_select(
+			"theme"				=> Toolbox::generate_input_select(
 				"theme",
 				array(
 					"selected" => $options["theme"],
@@ -331,7 +329,7 @@ class Admin extends \ithoughts\v1_0\Singleton{
 					)
 				)
 			),
-			"autocompletion"	=> \ithoughts\v1_1\Toolbox::generate_input_check(
+			"autocompletion"	=> Toolbox::generate_input_check(
 				"autocompletion[]",
 				array(
 					"radio" => false,
@@ -358,8 +356,8 @@ class Admin extends \ithoughts\v1_0\Singleton{
 		$ace_options = $backbone->get_options();
 
 		$postValues = $_POST;
-		$postValues['enable_shortcode']			= \ithoughts\v1_1\Toolbox::checkbox_to_bool($postValues,'enable_shortcode',	"enabled");
-		$postValues["autocompletion"]	= \ithoughts\v1_1\Toolbox::checkbox_to_bool($postValues,'autocompletion',	array("autocompletion_ondemand", "autocompletion_live"));
+		$postValues['enable_shortcode']			= Toolbox::checkbox_to_bool($postValues,'enable_shortcode',	"enabled");
+		$postValues["autocompletion"]	= Toolbox::checkbox_to_bool($postValues,'autocompletion',	array("autocompletion_ondemand", "autocompletion_live"));
 
 		$outtxt = "";
 		$valid = true;
@@ -403,20 +401,20 @@ class Admin extends \ithoughts\v1_0\Singleton{
 		}
 		$user = wp_get_current_user();
 		$opts = array(
-			"name"				=> \ithoughts\v1_1\Toolbox::generate_input_text(
+			"name"				=> Toolbox::generate_input_text(
 				"name",
 				array(
 					"value" => (strlen(trim($user->user_lastname . " " . $user->user_firstname)) > 0) ? $user->user_lastname . " " . $user->user_firstname : $user->display_name,
 				)
 			),
-			"email"				=> \ithoughts\v1_1\Toolbox::generate_input_text(
+			"email"				=> Toolbox::generate_input_text(
 				"email",
 				array(
 					"value" => $user->user_email,
 					"type" => "email"
 				)
 			),
-			"type"				=> \ithoughts\v1_1\Toolbox::generate_input_select(
+			"type"				=> Toolbox::generate_input_select(
 				"type",
 				array(
 					"selected" => $vals["type"],
@@ -428,14 +426,14 @@ class Admin extends \ithoughts\v1_0\Singleton{
 					"required" => true
 				)
 			),
-			"file"				=> \ithoughts\v1_1\Toolbox::generate_input_text(
+			"file"				=> Toolbox::generate_input_text(
 				"file",
 				array(
 					"value" => $vals["file"],
 					"required" => true
 				)
 			),
-			"code"				=> \ithoughts\v1_1\Toolbox::generate_input_text(
+			"code"				=> Toolbox::generate_input_text(
 				"code",
 				array(
 					"value" => $vals["code"],
@@ -448,7 +446,7 @@ class Admin extends \ithoughts\v1_0\Singleton{
 					"required" => true
 				)
 			),
-			"included"			=> \ithoughts\v1_1\Toolbox::generate_input_text(
+			"included"			=> Toolbox::generate_input_text(
 				"included",
 				array(
 					"textarea" => true,
@@ -459,7 +457,7 @@ class Admin extends \ithoughts\v1_0\Singleton{
 					"required" => true
 				)
 			),
-			"comment"			=> \ithoughts\v1_1\Toolbox::generate_input_text(
+			"comment"			=> Toolbox::generate_input_text(
 				"comment",
 				array(
 					"textarea" => true,
